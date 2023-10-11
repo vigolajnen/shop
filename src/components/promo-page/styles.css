@@ -1,5 +1,5 @@
 .promo {
-  height: 708px;
+  /* height: 708px; */
   /* background-image: linear-gradient(
     to right top,
     #1c8ac8,
@@ -8,10 +8,14 @@
     #c1d6eb,
     #ebf1f7
   ); */
+  height: 60vh;
 }
 
 @media (min-width: 567px) {
   .promo {
-    height: 689px;
+    /* height: 689px;
+     */
+     height: 70vh;
+     max-height: 689px;
   }
 }

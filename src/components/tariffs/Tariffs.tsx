@@ -50,7 +50,7 @@ export default function Tariffs({ title, data, count }: ITariffsProps) {
   return (
     <Section
       id='tariffs'
-      styleWrapper='tariffs bg-curious-blue-500'
+      styleWrapper='tariffs relative overflow-hidden bg-curious-blue-500'
       styleInner='max-w-screen-xl overflow-hidden'
     >
       {title && (

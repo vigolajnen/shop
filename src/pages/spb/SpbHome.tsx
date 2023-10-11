@@ -8,7 +8,8 @@ import {
   listTariffs,
 } from '../../components/tariffs/data/dataSpb';
 import { listFaqAccordion } from '../../components/faq-accordion/data';
-import { arrayPicAll } from '../../components/clubs-gallery/data/dataSpb';
+import { ALL_GALLERY_DATA } from '../../components/clubs-gallery/data/dataSpb';
+import { PROMO_CAROUSEL } from '../../components/promo-page/data/dataSpb';
 
 import PromoPage from '../../components/promo-page/PromoPage';
 import Timer from '../../components/timer/Timer';
@@ -18,13 +19,12 @@ import Tariffs from '../../components/tariffs/Tariffs';
 import ClubsGallery from '../../components/clubs-gallery/ClubsGallery';
 import Faq from '../../components/faq/Faq';
 import FooterPage from '../../components/footer-page/FooterPage';
-import { arrayPromoPic } from '../../components/promo-page/data/dataSpb';
 
 const SpbHome = () => {
   return (
     <main className=''>
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <PromoPage data={arrayPromoPic} />
+        <PromoPage data={PROMO_CAROUSEL} />
       </motion.div>
 
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
@@ -44,7 +44,7 @@ const SpbHome = () => {
       </motion.div>
 
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <ClubsGallery title='клубы fitness house' data={arrayPicAll} />
+        <ClubsGallery title='клубы fitness house' data={ALL_GALLERY_DATA} />
       </motion.div>
 
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>

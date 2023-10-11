@@ -31,11 +31,18 @@ export default function CarouselBaseSwiper({
 }: ICarouselBaseSwiperProps) {
   return (
     <>
-      {[...data].length > 0 ? (
-        <Swiper id={sliderId} breakpoints={breakpoints} className={wrapperClass} {...props}>
+      {data && [...data].length > 0 ? (
+        <Swiper
+          id={sliderId}
+          breakpoints={breakpoints}
+          className={wrapperClass}
+          {...props}
+        >
           {children}
         </Swiper>
-      ) : <Spinner/>}
+      ) : (
+        <Spinner />
+      )}
     </>
   );
 }

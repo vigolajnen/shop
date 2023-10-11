@@ -14,10 +14,15 @@ import './styles.css';
 
 export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
   const matches = useMediaQuery('(min-width: 567px)');
-  const sliderMainData = data[0];
-  const sliderPoolData = data[1];
-  const sliderGymData = data[2];
-  const sliderSpaData = data[3];
+
+  const sliderMainData = data?.find((el: any) => el.name === 'main')?.arrayData;
+  const sliderPoolData = data?.find((el: any) => el.name === 'pool')?.arrayData;
+  const sliderGymData = data?.find((el: any) => el.name === 'gym')?.arrayData;
+  const sliderSpaData = data?.find((el: any) => el.name === 'spa')?.arrayData;
+  const sliderGroupData = data?.find(
+    (el: any) => el.name === 'group',
+  ).arrayData;
+
   const breakpoints = {
     320: {
       slidesPerView: 1.3,
@@ -151,6 +156,38 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
                 {...carouselProps2}
               >
                 {[...sliderSpaData].map((el, index) => (
+                  <SwiperSlide
+                    key={index}
+                    className='overflow-hidden rounded-xl'
+                  >
+                    <img
+                      className='w-full h-56 sm:h-full max-h-56 object-cover'
+                      src={el}
+                      alt=''
+                    />
+                  </SwiperSlide>
+                ))}
+              </CarouselBaseSwiper>
+            </>
+          ) : null}
+
+          {sliderGroupData && [...sliderGroupData].length > 0 ? (
+            <>
+              <div className='p-4 pl-0 mb-3 text-md'>
+                Разнообразные групповые уроки
+                <br />
+                <span className='text-curious-blue-500'>
+                  растяжка, гимнастика, силовые, аквааэробика
+                </span>
+              </div>
+              <CarouselBaseSwiper
+                wrapperClass='spa-clubs-slider mb-2'
+                data={data}
+                sliderId='spa-clubs-slider'
+                breakpoints={breakpoints}
+                {...carouselProps2}
+              >
+                {[...sliderGroupData].map((el, index) => (
                   <SwiperSlide
                     key={index}
                     className='overflow-hidden rounded-xl'

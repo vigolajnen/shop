@@ -4,11 +4,13 @@ import { motion } from 'framer-motion';
 import { listServices } from '../../components/club-services/data/dataSam';
 import { listAdvantages } from '../../components/advantages/data/dataSam';
 import { listFaqAccordion } from '../../components/faq-accordion/data';
+import { PROMO_CAROUSEL } from '../../components/promo-page/data/dataSam';
+
 import {
   clubsAddress,
   listTariffs,
 } from '../../components/tariffs/data/dataSam';
-import { arrayPicAll } from '../../components/clubs-gallery/data/dataSam';
+import { ALL_GALLERY_DATA } from '../../components/clubs-gallery/data/dataSam';
 
 import PromoPage from '../../components/promo-page/PromoPage';
 import Timer from '../../components/timer/Timer';
@@ -18,13 +20,13 @@ import Tariffs from '../../components/tariffs/Tariffs';
 import ClubsGallery from '../../components/clubs-gallery/ClubsGallery';
 import Faq from '../../components/faq/Faq';
 import FooterPage from '../../components/footer-page/FooterPage';
-import { arrayPromoPic } from '../../components/promo-page/data/dataSam';
 
 const Home = () => {
   return (
+    // arrayPromoPic
     <main className=''>
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <PromoPage data={arrayPromoPic} />
+        <PromoPage data={PROMO_CAROUSEL} />
       </motion.div>
 
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
@@ -44,7 +46,7 @@ const Home = () => {
       </motion.div>
 
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <ClubsGallery title='клубы fitness house' data={arrayPicAll} />
+        <ClubsGallery title='клубы fitness house' data={ALL_GALLERY_DATA} />
       </motion.div>
 
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
