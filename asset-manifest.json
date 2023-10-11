@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shop/static/css/main.55afcb89.css",
-    "main.js": "/shop/static/js/main.82ae28ff.js",
+    "main.css": "/shop/static/css/main.894df6ce.css",
+    "main.js": "/shop/static/js/main.8d60a2d5.js",
     "static/media/1.jpg": "/shop/static/media/1.54702f0fad9347bb9721.jpg",
     "static/media/2.jpg": "/shop/static/media/2.3a0e62f725007d6d1b41.jpg",
     "static/media/3.jpg": "/shop/static/media/3.ef98d8de23734490fa7a.jpg",
@@ -13,11 +13,11 @@
     "static/media/GothaProReg_1.woff2": "/shop/static/media/GothaProReg_1.65f17a91ff3685545b3a.woff2",
     "static/media/GothaProBol.woff2": "/shop/static/media/GothaProBol.d57aed1aa7343d162fe5.woff2",
     "index.html": "/shop/index.html",
-    "main.55afcb89.css.map": "/shop/static/css/main.55afcb89.css.map",
-    "main.82ae28ff.js.map": "/shop/static/js/main.82ae28ff.js.map"
+    "main.894df6ce.css.map": "/shop/static/css/main.894df6ce.css.map",
+    "main.8d60a2d5.js.map": "/shop/static/js/main.8d60a2d5.js.map"
   },
   "entrypoints": [
-    "static/css/main.55afcb89.css",
-    "static/js/main.82ae28ff.js"
+    "static/css/main.894df6ce.css",
+    "static/js/main.8d60a2d5.js"
   ]
 }
