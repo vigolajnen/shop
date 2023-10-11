@@ -1,0 +1,17 @@
+.promo {
+  height: 708px;
+  /* background-image: linear-gradient(
+    to right top,
+    #1c8ac8,
+    #66a3d4,
+    #95bce0,
+    #c1d6eb,
+    #ebf1f7
+  ); */
+}
+
+@media (min-width: 567px) {
+  .promo {
+    height: 689px;
+  }
+}

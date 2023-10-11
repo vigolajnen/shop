@@ -1,0 +1,11 @@
+
+
+@media (min-width: 1100px) {
+  .react-multi-carousel-list {
+    justify-content: center;
+  }
+}
+
+.react-multiple-carousel__arrow {
+  z-index: 30 !important;
+}

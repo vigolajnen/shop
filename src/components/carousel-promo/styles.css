@@ -1,0 +1,37 @@
+.promo .react-multi-carousel-dot-list {
+  bottom: 30px;
+}
+
+.promo .swiper-pagination-bullet {
+  width: 40px;
+  height: 8px;
+  border-radius: 3px;
+  border: none;
+  background: white;
+}
+
+.promo .swiper-pagination-bullet-active {
+  background: wheat;
+}
+
+.promo .swiper-button-prev,
+.promo .swiper-button-next {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.promo .swiper-button-prev:after,
+.promo .swiper-button-next:after {
+  font-size: inherit;
+}
+
+.promo .swiper-button-prev:hover,
+.promo .swiper-button-next:hover {
+  color: #fff;
+  background-color: wheat;
+}

@@ -1,0 +1,30 @@
+@media (min-width: 640px) {
+  .tariffs-list-wrapper {
+    padding-left: 100%;
+  }
+}
+
+@media (min-width: 760px) {
+  .tariffs-list-wrapper {
+    padding-left: 70%;
+  }
+}
+
+@media (min-width: 880px) {
+  .tariffs-list-wrapper {
+    padding-left: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tariffs-list-wrapper {
+    padding-left: 20%;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .tariffs-list-wrapper {
+    padding-left: 0;
+  }
+}
