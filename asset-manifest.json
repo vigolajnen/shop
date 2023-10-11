@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dda20368.css",
+    "main.js": "/static/js/main.99a5e17d.js",
+    "static/media/1.jpg": "/static/media/1.54702f0fad9347bb9721.jpg",
+    "static/media/2.jpg": "/static/media/2.3a0e62f725007d6d1b41.jpg",
+    "static/media/3.jpg": "/static/media/3.ef98d8de23734490fa7a.jpg",
+    "static/media/spa.jpg": "/static/media/spa.14a104693ce0b598c574.jpg",
+    "static/media/pool.jpg": "/static/media/pool.b086d4d3519525ce4241.jpg",
+    "static/media/group.jpg": "/static/media/group.508afce2cbd2ff5f7bda.jpg",
+    "static/media/gym.jpg": "/static/media/gym.46ed20de45be0e970c8e.jpg",
+    "static/media/GothaProReg.woff2": "/static/media/GothaProReg.65f17a91ff3685545b3a.woff2",
+    "static/media/GothaProReg_1.woff2": "/static/media/GothaProReg_1.65f17a91ff3685545b3a.woff2",
+    "static/media/GothaProBol.woff2": "/static/media/GothaProBol.d57aed1aa7343d162fe5.woff2",
+    "index.html": "/index.html",
+    "main.dda20368.css.map": "/static/css/main.dda20368.css.map",
+    "main.99a5e17d.js.map": "/static/js/main.99a5e17d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dda20368.css",
+    "static/js/main.99a5e17d.js"
+  ]
+}
