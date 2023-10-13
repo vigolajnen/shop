@@ -1,10 +1,14 @@
 {
   "files": {
-    "main.css": "/shop/static/css/main.894df6ce.css",
-    "main.js": "/shop/static/js/main.8d60a2d5.js",
+    "main.css": "/shop/static/css/main.18ccef1c.css",
+    "main.js": "/shop/static/js/main.fb94f888.js",
+    "static/media/5.jpg": "/shop/static/media/5.138f0c57d18369e21c1d.jpg",
     "static/media/1.jpg": "/shop/static/media/1.54702f0fad9347bb9721.jpg",
+    "static/media/4.jpg": "/shop/static/media/4.0dac41a830a7cda89a22.jpg",
     "static/media/2.jpg": "/shop/static/media/2.3a0e62f725007d6d1b41.jpg",
     "static/media/3.jpg": "/shop/static/media/3.ef98d8de23734490fa7a.jpg",
+    "static/media/7.jpg": "/shop/static/media/7.e532673362c5b214a426.jpg",
+    "static/media/6.jpg": "/shop/static/media/6.b90e387fda4e3b3e5ddb.jpg",
     "static/media/spa.jpg": "/shop/static/media/spa.14a104693ce0b598c574.jpg",
     "static/media/pool.jpg": "/shop/static/media/pool.b086d4d3519525ce4241.jpg",
     "static/media/group.jpg": "/shop/static/media/group.508afce2cbd2ff5f7bda.jpg",
@@ -13,11 +17,11 @@
     "static/media/GothaProReg_1.woff2": "/shop/static/media/GothaProReg_1.65f17a91ff3685545b3a.woff2",
     "static/media/GothaProBol.woff2": "/shop/static/media/GothaProBol.d57aed1aa7343d162fe5.woff2",
     "index.html": "/shop/index.html",
-    "main.894df6ce.css.map": "/shop/static/css/main.894df6ce.css.map",
-    "main.8d60a2d5.js.map": "/shop/static/js/main.8d60a2d5.js.map"
+    "main.18ccef1c.css.map": "/shop/static/css/main.18ccef1c.css.map",
+    "main.fb94f888.js.map": "/shop/static/js/main.fb94f888.js.map"
   },
   "entrypoints": [
-    "static/css/main.894df6ce.css",
-    "static/js/main.8d60a2d5.js"
+    "static/css/main.18ccef1c.css",
+    "static/js/main.fb94f888.js"
   ]
 }
