@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/shop/static/css/main.18ccef1c.css",
-    "main.js": "/shop/static/js/main.2e88cc56.js",
-    "static/media/5.webp": "/shop/static/media/5.3165fc87800e47e3e037.webp",
-    "static/media/1.webp": "/shop/static/media/1.d5743825d404220d1ff2.webp",
-    "static/media/2.webp": "/shop/static/media/2.0f7425d6a860cecc437b.webp",
+    "main.css": "/shop/static/css/main.d899c721.css",
+    "main.js": "/shop/static/js/main.5f40c60b.js",
     "static/media/1.jpg": "/shop/static/media/1.54702f0fad9347bb9721.jpg",
-    "static/media/4.webp": "/shop/static/media/4.5f7def25e6caed5cdddf.webp",
-    "static/media/3.webp": "/shop/static/media/3.b0e26b03f3f9e08757ca.webp",
-    "static/media/7.webp": "/shop/static/media/7.c28c7d0d3904f5a79ed8.webp",
-    "static/media/6.webp": "/shop/static/media/6.2f4a08a511c0bf9f2797.webp",
     "static/media/spa.jpg": "/shop/static/media/spa.14a104693ce0b598c574.jpg",
     "static/media/pool.jpg": "/shop/static/media/pool.b086d4d3519525ce4241.jpg",
     "static/media/group.jpg": "/shop/static/media/group.508afce2cbd2ff5f7bda.jpg",
     "static/media/gym.jpg": "/shop/static/media/gym.46ed20de45be0e970c8e.jpg",
     "static/media/2.jpg": "/shop/static/media/2.3a0e62f725007d6d1b41.jpg",
+    "static/media/2.webp": "/shop/static/media/2.72465d84ea9a4b390ccb.webp",
+    "static/media/3.webp": "/shop/static/media/3.fb15db4ee7b1ba7e1ea6.webp",
+    "static/media/1.webp": "/shop/static/media/1.8101c2358872cfa7e4ea.webp",
     "static/media/GothaProReg.woff2": "/shop/static/media/GothaProReg.65f17a91ff3685545b3a.woff2",
     "static/media/GothaProReg_1.woff2": "/shop/static/media/GothaProReg_1.65f17a91ff3685545b3a.woff2",
     "static/media/GothaProBol.woff2": "/shop/static/media/GothaProBol.d57aed1aa7343d162fe5.woff2",
     "static/media/3.jpg": "/shop/static/media/3.ef98d8de23734490fa7a.jpg",
     "index.html": "/shop/index.html",
-    "main.18ccef1c.css.map": "/shop/static/css/main.18ccef1c.css.map",
-    "main.2e88cc56.js.map": "/shop/static/js/main.2e88cc56.js.map"
+    "static/media/6.webp": "/shop/static/media/6.fff0c5fdfa70effe949e.webp",
+    "static/media/5.webp": "/shop/static/media/5.f97d7681489630ad1459.webp",
+    "static/media/4.webp": "/shop/static/media/4.76ee7ea5fd991b9e33a6.webp",
+    "static/media/7.webp": "/shop/static/media/7.6ec7eee695ed253c3146.webp",
+    "main.d899c721.css.map": "/shop/static/css/main.d899c721.css.map",
+    "main.5f40c60b.js.map": "/shop/static/js/main.5f40c60b.js.map"
   },
   "entrypoints": [
-    "static/css/main.18ccef1c.css",
-    "static/js/main.2e88cc56.js"
+    "static/css/main.d899c721.css",
+    "static/js/main.5f40c60b.js"
   ]
 }
