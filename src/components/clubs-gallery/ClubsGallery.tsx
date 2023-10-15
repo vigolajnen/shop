@@ -4,13 +4,14 @@ import { SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
 
 import { IClubsGalleryProps } from '../../types';
-import Section from '../../UI/section/Section';
-import SectionTitle from '../../UI/section-title/SectionTitle';
+import Section from '../UI/section/Section';
+import SectionTitle from '../UI/section-title/SectionTitle';
 import CarouselBaseSwiper from '../carousel-base-swiper/CarouselBaseSwiper';
 
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import './styles.css';
+import { Scroll } from '../icons';
 
 export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
   const matches = useMediaQuery('(min-width: 567px)');
@@ -25,7 +26,7 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
 
   const breakpoints = {
     320: {
-      slidesPerView: 1.3,
+      slidesPerView: 1.2,
       freeMode: true,
       spaceBetween: 10,
     },
@@ -53,9 +54,12 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
   };
 
   return (
-    <Section styleWrapper='bg-porcelain-50 px-0' styleInner='max-w-screen-xl'>
+    <Section
+      styleWrapper='bg-porcelain-50 px-0 clubsGallery'
+      styleInner='max-w-screen-xl relative'
+    >
       {title && (
-        <SectionTitle as='h3' styles='mb-5 sm:mb-10 px-4'>
+        <SectionTitle as='h3' styles='px-4 text-center md:text-left'>
           {title}
         </SectionTitle>
       )}
@@ -77,15 +81,16 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
           </CarouselBaseSwiper>
         ) : null
       ) : (
-        <div>
+        <div className='-mt-9 md:mt-0'>
           {sliderPoolData && [...sliderPoolData].length > 0 ? (
-            <>
-              <div className='p-4 pl-0 mb-3 text-md'>
+            <div className='relative'>
+              <div className='p-4 pl-0 mb-1 mt-2 text-md font-semibold'>
                 <span className='text-curious-blue-500'>
                   Просторный бассейн{' '}
                 </span>
                 для спортивного и расслабленного плавания
               </div>
+              <Scroll className='w-11 h-11 absolute top-5 right-0 text-picton-blue-500' />
               <CarouselBaseSwiper
                 wrapperClass='pool-clubs-slider mb-2'
                 data={data}
@@ -99,25 +104,26 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
                     className='overflow-hidden rounded-xl'
                   >
                     <img
-                      className='w-full h-56 sm:h-full max-h-56 object-cover'
+                      className='w-full h-48 md:h-56 sm:h-full max-h-56 object-cover'
                       src={el}
                       alt=''
                     />
                   </SwiperSlide>
                 ))}
               </CarouselBaseSwiper>
-            </>
+            </div>
           ) : null}
 
           {sliderGymData && [...sliderGymData].length > 0 ? (
-            <>
-              <div className='p-4 pl-0 mb-3 text-md'>
+            <div className='relative'>
+              <div className='p-4 pl-0 mb-1 mt-2 font-semibold text-base'>
                 Профессионально оборудованный и 
                 <span className='text-curious-blue-500'>
                   {' '}
                   современный тренажёрный зал{' '}
                 </span>
               </div>
+              <Scroll className='w-11 h-11 absolute top-5 right-0 text-picton-blue-500' />
               <CarouselBaseSwiper
                 wrapperClass='gym-clubs-slider mb-2'
                 data={data}
@@ -134,20 +140,23 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
                       className='w-full h-56 sm:h-full max-h-56 object-cover'
                       src={el}
                       alt=''
+                      width='640px'
+                      height='427px'
                     />
                   </SwiperSlide>
                 ))}
               </CarouselBaseSwiper>
-            </>
+            </div>
           ) : null}
 
           {sliderSpaData && [...sliderSpaData].length > 0 ? (
-            <>
-              <div className='p-4 pl-0 mb-3 text-md'>
+            <div className='relative'>
+              <div className='p-4 pl-0 mb-1 mt-2 text-md font-semibold'>
                 <span className='text-curious-blue-500'>Спа-комплекс </span>
                 <br />
                 финская, русская, турецкая, инфракрасная сауны и соляная комната
               </div>
+              <Scroll className='w-11 h-11 absolute top-5 right-0 text-picton-blue-500' />
               <CarouselBaseSwiper
                 wrapperClass='spa-clubs-slider mb-2'
                 data={data}
@@ -164,22 +173,25 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
                       className='w-full h-56 sm:h-full max-h-56 object-cover'
                       src={el}
                       alt=''
+                      width='640px'
+                      height='427px'
                     />
                   </SwiperSlide>
                 ))}
               </CarouselBaseSwiper>
-            </>
+            </div>
           ) : null}
 
           {sliderGroupData && [...sliderGroupData].length > 0 ? (
-            <>
-              <div className='p-4 pl-0 mb-3 text-md'>
+            <div className='relative'>
+              <div className='p-4 pl-0 mb-1 mt-2 text-md font-semibold'>
                 Разнообразные групповые уроки
                 <br />
                 <span className='text-curious-blue-500'>
                   растяжка, гимнастика, силовые, аквааэробика
                 </span>
               </div>
+              <Scroll className='w-11 h-11 absolute top-5 right-0 text-picton-blue-500' />
               <CarouselBaseSwiper
                 wrapperClass='spa-clubs-slider mb-2'
                 data={data}
@@ -200,7 +212,7 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
                   </SwiperSlide>
                 ))}
               </CarouselBaseSwiper>
-            </>
+            </div>
           ) : null}
         </div>
       )}

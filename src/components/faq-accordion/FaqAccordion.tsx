@@ -4,7 +4,7 @@ import './styles.css';
 
 export default function FaqAccordion({ data }: IFaqAccordionProps) {
   return (
-    <div className='accordion faq-accordion flex flex-col items-center justify-center'>
+    <div className='accordion faq-accordion border-t border-black flex flex-col items-center justify-center'>
       {[...data].map((el) => (
         <div className='w-full' key={el.id}>
           <input type='checkbox' name='panel' id={`panel-${el.id}`} className='hidden' />

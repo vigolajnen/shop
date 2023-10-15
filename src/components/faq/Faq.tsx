@@ -3,14 +3,14 @@ import React from 'react';
 import { IFaqProps } from '../../types';
 
 import FaqAccordion from '../faq-accordion/FaqAccordion';
-import Section from '../../UI/section/Section';
-import SectionTitle from '../../UI/section-title/SectionTitle';
+import Section from '../UI/section/Section';
+import SectionTitle from '../UI/section-title/SectionTitle';
 
 export default function Faq({ title, data }: IFaqProps) {
   return (
-    <Section styleWrapper='bg-porcelain-50 faq' styleInner='max-w-screen-xl'>
+    <Section styleWrapper='bg-porcelain-50 faq pb-20 -mt-10 lg:-mt-16' styleInner='max-w-screen-xl xl:max-w-screen-lg'>
       {title && (
-        <SectionTitle as='h3' styles='text-center mb-5 sm:mb-10'>
+        <SectionTitle as='h3' styles='px-4 text-center md:text-left'>
           {title}
         </SectionTitle>
       )}

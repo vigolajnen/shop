@@ -1,7 +1,7 @@
-import POOL_PIC from '../../../images/club-services/pool.jpg';
-import GYM_PIC from '../../../images/club-services/gym.jpg';
-import SPA_PIC from '../../../images/club-services/spa.jpg';
-import GROUP_PIC from '../../../images/club-services/group.jpg';
+import POOL_PIC from '../../../images/club-services/pool.webp';
+import GYM_PIC from '../../../images/club-services/gym.webp';
+import SPA_PIC from '../../../images/club-services/spa.webp';
+import GROUP_PIC from '../../../images/club-services/group.webp';
 
 export const listServices = [
   {

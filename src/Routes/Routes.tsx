@@ -12,6 +12,7 @@ import Modal from '../components/modal/Modal';
 import ModalContent from '../components/modal/ModalContent';
 
 import FormOrderTariff from '../components/form-order-tariff/FormOrderTariff';
+import { NotFoundPage } from '../pages/not-found/NotFoundPage';
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -32,6 +33,7 @@ const AppRoutes = () => {
         <Route path={ROUTES.HOME} element={<LayoutPage />}>
           <Route index element={<Home />} />
           <Route path={ROUTES.SPB} element={<SpbHome />} />
+          <Route path={ROUTES.URL_ANY} element={<NotFoundPage />} />
         </Route>
       </Routes>
 

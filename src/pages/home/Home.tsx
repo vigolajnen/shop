@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { listServices } from '../../components/club-services/data/dataSam';
 import { listAdvantages } from '../../components/advantages/data/dataSam';
 import { listFaqAccordion } from '../../components/faq-accordion/data';
-import { PROMO_CAROUSEL } from '../../components/promo-page/data/dataSam';
+import { PROMO_CAROUSEL } from '../../components/promo/data/dataSam';
 
 import {
   clubsAddress,
@@ -12,7 +12,7 @@ import {
 } from '../../components/tariffs/data/dataSam';
 import { ALL_GALLERY_DATA } from '../../components/clubs-gallery/data/dataSam';
 
-import PromoPage from '../../components/promo-page/PromoPage';
+import Promo from '../../components/promo/Promo';
 import Timer from '../../components/timer/Timer';
 import ClubServices from '../../components/club-services/ClubServices';
 import Advantages from '../../components/advantages/Advantages';
@@ -20,13 +20,25 @@ import Tariffs from '../../components/tariffs/Tariffs';
 import ClubsGallery from '../../components/clubs-gallery/ClubsGallery';
 import Faq from '../../components/faq/Faq';
 import FooterPage from '../../components/footer-page/FooterPage';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   return (
     // arrayPromoPic
     <main className=''>
+      <Helmet>
+        <meta charSet='utf-8' />
+        <title>
+          Fitness House в Самаре | Безлимитный абонемент за месяц 1900 руб.
+        </title>
+        <meta
+          name='description'
+          content='Фитнес-клуб с бассейном с оплатой за месяц 1900 руб. Бассейн, спа, групповые занятия, тренажерный зал.'
+        />
+      </Helmet>
+
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <PromoPage data={PROMO_CAROUSEL} />
+        <Promo data={PROMO_CAROUSEL} />
       </motion.div>
 
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
@@ -41,19 +53,23 @@ const Home = () => {
         <Tariffs title='Тарифы' data={listTariffs} count={3} />
       </motion.div>
 
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <Advantages title='Ваша выгода' data={listAdvantages} />
-      </motion.div>
+      <div className='overflow-hidden'>
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          <Advantages title='Ваша выгода' data={listAdvantages} />
+        </motion.div>
 
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <ClubsGallery title='клубы fitness house' data={ALL_GALLERY_DATA} />
-      </motion.div>
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          <ClubsGallery title='клубы fitness house' data={ALL_GALLERY_DATA} />
+        </motion.div>
+      </div>
+      
+      <div className='overflow-hidden'>
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          <Faq title='отвечаем на Вопросы' data={listFaqAccordion} />
+        </motion.div>
 
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <Faq title='отвечаем на Вопросы' data={listFaqAccordion} />
-      </motion.div>
-
-      <FooterPage data={clubsAddress} />
+        <FooterPage data={clubsAddress} />
+      </div>
     </main>
   );
 };

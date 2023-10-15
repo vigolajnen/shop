@@ -28,3 +28,28 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
+
+.timer-title {
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 24.7px */
+}
+
+@media (min-width: 567px) {
+  .timer-title {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 30.8px */
+  }
+}
+
+@media (min-width: 960px) {
+  .timer-title {
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 35px */
+  }
+}

@@ -1,32 +1,39 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/**/*.{js,jsx,ts,tsx}',
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Gotham Pro"', '"Arial"', '"Helvetica"', 'sans-serif'],
+      },
     },
     screens: {
-      'xs': '425px',
+      xs: '425px',
       // => @media (min-width: 425px) { ... }
 
-      'sm': '640px',
+      sm: '640px',
       // => @media (min-width: 640px) { ... }
 
-      'md': '768px',
+      md: '768px',
       // => @media (min-width: 768px) { ... }
 
-      'lg': '1024px',
+      lg: '1024px',
       // => @media (min-width: 1024px) { ... }
 
-      'xl': '1280px',
+      xl: '1280px',
       // => @media (min-width: 1280px) { ... }
 
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
     colors: {
-      'white': {
+      black: {
+        '0': '#000000',
+      },
+      dark: {
+        '50': '#171818',
+      },
+      white: {
         '50': '#ffffff',
         '100': '#efefef',
         '200': '#dcdcdc',
@@ -38,8 +45,8 @@ module.exports = {
         '800': '#464646',
         '900': '#3d3d3d',
         '950': '#292929',
-    },    
-      'mako': {
+      },
+      mako: {
         '50': '#f4f5f7',
         '100': '#e4e7e9',
         '200': '#ccd1d5',
@@ -51,7 +58,7 @@ module.exports = {
         '800': '#42474d',
         '900': '#383b41',
         '950': '#232529',
-    },    
+      },
       'picton-blue': {
         '50': '#f1f9fe',
         '100': '#e2f1fc',
@@ -64,8 +71,8 @@ module.exports = {
         '800': '#10547c',
         '900': '#134667',
         '950': '#0d2d44',
-    },
-      'mischka': {
+      },
+      mischka: {
         '50': '#f6f7f8',
         '100': '#eaecef',
         '200': '#d0d5dd',
@@ -117,7 +124,7 @@ module.exports = {
         '900': '#801c1c',
         '950': '#460909',
       },
-      'porcelain': {
+      porcelain: {
         '50': '#f3f6f8',
         '100': '#ebf0f3',
         '200': '#d3dee4',
@@ -129,8 +136,7 @@ module.exports = {
         '800': '#354b57',
         '900': '#30404a',
         '950': '#202a31',
-    },
-    
+      },
     },
   },
   plugins: [],

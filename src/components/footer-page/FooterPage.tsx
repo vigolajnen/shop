@@ -7,9 +7,9 @@ import './styles.css';
 
 export default function FooterPage({ data }: IFooterPageProps) {
   return (
-    <footer className='bg-curious-blue-500 py-10 pb-10 px-4 lg:px-6 '>
+    <footer className='bg-curious-blue-500 py-10 pb-10 px-4 lg:px-6 footer'>
       <div className='container mx-auto max-w-screen-xl'>
-        <div className="py-4 mb-4 border-b border-white flex flex-wrap items-baseline">
+        <div className="py-4 mb-4 border-b border-white flex flex-wrap items-baseline md:gap-5 xl:gap-24">
           <Logo width={160} height={27} className='w-48 max-w-full text-white px-4 mr-10' />
           <ClubsAddress data={data} />
         </div>

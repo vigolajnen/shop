@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ITimerProps } from '../../types';
-import Section from '../../UI/section/Section';
+import Section from '../UI/section/Section';
 import './styles.css';
 
 export default function Timer({ title, endDate, startDate }: ITimerProps) {
@@ -56,15 +56,15 @@ export default function Timer({ title, endDate, startDate }: ITimerProps) {
   return (
     <Section
       styleWrapper=''
-      styleInner='overflow-hidden max-w-full w-full sm:px-4 xl:px-10 sm:w-full flex flex-wrap justify-between lg:justify-center items-center'
+      styleInner='overflow-hidden max-w-screen-lg w-full sm:px-4 xl:px-10 sm:w-full flex flex-wrap justify-between lg:justify-center items-center'
     >
-      <h2 className='mb-4 sm:mb-0 w-full grow sm:w-1/3  md:w-1/4 font-bold text-xl lg:text-2xl uppercase text-center sm:text-left'>
+      <h2 className='mb-4 lg:mb-0 w-full grow lg:w-1/4 xl:w-56 timer-title uppercase text-center lg:text-left'>
         {title}
       </h2>
 
-      <div className='timer__wrapper grow flex flex-wrap w-full sm:w-2/3 md:w-2/4'>
+      <div className='timer__wrapper grow flex flex-wrap w-full lg:w-2/4'>
         <div className='timer__item h-20 xs:h-28 sm:h-48 lg:h-40 relative w-1/4 flex flex-col justify-center'>
-          <svg viewBox='0 0 160 160' width='160' height='160'>
+          <svg viewBox='0 0 160 160' width='160' height='160' className="w-full h-full">
             <defs>
               <linearGradient id='gradient-1' gradientTransform='rotate(90)'>
                 <stop stopColor='#70D0FF' />
@@ -87,8 +87,8 @@ export default function Timer({ title, endDate, startDate }: ITimerProps) {
             <span id='label-days'>{daysLabel}</span>
           </div>
         </div>
-        <div className='timer__item h-20 sm:h-48 lg:h-40  relative w-1/4 flex flex-col justify-center'>
-          <svg viewBox='0 0 160 160' width='160' height='160'>
+        <div className='timer__item h-20 xs:h-28 sm:h-48 lg:h-40  relative w-1/4 flex flex-col justify-center'>
+          <svg viewBox='0 0 160 160' width='160' height='160'  className="w-full h-full">
             <defs>
               <linearGradient id='gradient-2' gradientTransform='rotate(90)'>
                 <stop stopColor='#70D0FF' />
@@ -112,7 +112,7 @@ export default function Timer({ title, endDate, startDate }: ITimerProps) {
           </div>
         </div>
         <div className='timer__item h-20 xs:h-28 sm:h-48 lg:h-40  relative w-1/4 flex flex-col justify-center'>
-          <svg viewBox='0 0 160 160' width='160' height='160'>
+          <svg viewBox='0 0 160 160' width='160' height='160'  className="w-full h-full">
             <defs>
               <linearGradient id='gradient-3' gradientTransform='rotate(90)'>
                 <stop stopColor='#70D0FF' />
@@ -136,7 +136,7 @@ export default function Timer({ title, endDate, startDate }: ITimerProps) {
           </div>
         </div>
         <div className='timer__item h-20 xs:h-28 sm:h-48 lg:h-40  relative w-1/4 flex flex-col justify-center'>
-          <svg viewBox='0 0 160 160' width='160' height='160'>
+          <svg viewBox='0 0 160 160' width='160' height='160'  className="w-full h-full">
             <defs>
               <linearGradient id='gradient-4' gradientTransform='rotate(90)'>
                 <stop stopColor='#70D0FF' />

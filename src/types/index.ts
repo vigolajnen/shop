@@ -102,6 +102,7 @@ export interface IModalProps {
 export interface ICustomLabelFieldsProps {
   children?: JSX.Element | string;
   htmlFor?: string;
+  label?: string;
 }
 
 export interface ICarouselPictureItem {

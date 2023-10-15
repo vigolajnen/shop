@@ -17,5 +17,18 @@
 .main-clubs-slider .swiper-button-prev:hover,
 .main-clubs-slider .swiper-button-next:hover {
   color: #fff;
-  background-color: wheat;
+  background-color: #fff06b;
+}
+
+@media (min-width: 1024px) {
+  .clubsGallery .container::before {
+    content: '';
+    position: absolute;
+    top: -35%;
+    left: -5%;
+    width: 135px;
+    height: 135px;
+    background-image: url('../../images/decor/2.svg');
+    background-repeat: no-repeat;
+  }
 }

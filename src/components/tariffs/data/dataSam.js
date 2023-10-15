@@ -30,6 +30,9 @@ export const clubsAddress = [
 export const clubsAddressFilter = [...clubsAddress].filter(
   item => item.name !== 'Шипка',
 );
+export const clubsFormMulty = [...clubsAddress].filter(
+  item => item.name === 'Шипка',
+);
 
 export const listTariffs1 = [
   {
@@ -50,6 +53,7 @@ export const listTariffs1 = [
     },
     countClubs: clubsAddressFilter.length,
     clubs: clubsAddressFilter,
+    clubsForm: clubsAddressFilter,
   },
   {
     id: 2,
@@ -69,6 +73,7 @@ export const listTariffs1 = [
     },
     countClubs: clubsAddressFilter.length,
     clubs: clubsAddressFilter,
+    clubsForm: clubsAddressFilter,
   },
   {
     id: 3,
@@ -88,6 +93,7 @@ export const listTariffs1 = [
     },
     countClubs: clubsAddress.length,
     clubs: clubsAddress,
+    clubsForm: clubsFormMulty,
   },
 ];
 

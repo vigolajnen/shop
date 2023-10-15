@@ -1,17 +1,23 @@
-.promo .react-multi-carousel-dot-list {
+.promo .swiper {
+  min-height: 372px;
+  background-color: #1c8ac8;
+}
+
+.promo .swiper-pagination {
   bottom: 30px;
 }
 
 .promo .swiper-pagination-bullet {
-  width: 40px;
-  height: 8px;
+  width: 50px;
+  height: 5px;
   border-radius: 3px;
   border: none;
   background: white;
+  opacity: 1;
 }
 
 .promo .swiper-pagination-bullet-active {
-  background: wheat;
+  background: #fff06b;
 }
 
 .promo .swiper-button-prev,
@@ -33,5 +39,5 @@
 .promo .swiper-button-prev:hover,
 .promo .swiper-button-next:hover {
   color: #fff;
-  background-color: wheat;
+  background-color: #fff06b;
 }

@@ -25,9 +25,11 @@ export const listTariffs = [
       product_id: 2222,
       product_price: `${subscriptionData.price}`,
       product_name: `${subscriptionData.name}`,
+    
     },
     countClubs: clubsAddress.length,
     clubs: clubsAddress,
+    clubsForm: clubsAddress,
   },
   {
     id: 2,
@@ -47,5 +49,6 @@ export const listTariffs = [
     },
     countClubs: clubsAddress.length,
     clubs: clubsAddress,
+    clubsForm: clubsAddress,
   },
 ];

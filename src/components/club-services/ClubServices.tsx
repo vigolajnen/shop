@@ -1,17 +1,19 @@
 import React from 'react';
 import { useMediaQuery } from 'usehooks-ts';
+import { SwiperSlide } from 'swiper/react';
 
 import { IClubServicesProps } from '../../types';
-import Section from '../../UI/section/Section';
-import SectionTitle from '../../UI/section-title/SectionTitle';
+import Section from '../UI/section/Section';
+import SectionTitle from '../UI/section-title/SectionTitle';
 import CarouselBaseSwiper from '../carousel-base-swiper/CarouselBaseSwiper';
-import { SwiperSlide } from 'swiper/react';
+
+import './styles.css';
+import { Scroll } from '../icons';
 
 export default function ClubServices({ title, data }: IClubServicesProps) {
   const matches = useMediaQuery('(min-width: 567px) and (max-width: 1200px)');
 
-  const liClass =
-    'overflow-hidden bg-curious-blue-500 bg-no-repeat bg-cover rounded-3xl shadow-sm';
+  const liClass = 'overflow-hidden shadow-sm';
 
   const breakpoints = {
     320: {
@@ -43,55 +45,62 @@ export default function ClubServices({ title, data }: IClubServicesProps) {
   return (
     <Section styleWrapper='bg-porcelain-50'>
       {title && (
-        <SectionTitle as='h2' styles='mb-5 sm:mb-10'>
+        <SectionTitle as='h2' styles='text-center md:px-10'>
           {title}
         </SectionTitle>
       )}
 
       {matches ? (
-        <CarouselBaseSwiper
-          wrapperClass='clubs-services-slider'
-          data={data}
-          sliderId='clubs-services-slider'
-          breakpoints={breakpoints}
-          {...carouselProps}
-        >
-          {[...data].map((el, index) => (
-            <SwiperSlide key={index} className='overflow-hidden rounded-xl'>
-              <div
-                className={`bg-curious-blue-500 rounded-3xl shadow-sm bg-no-repeat bg-cover overflow-hidden`}
-                style={{ backgroundImage: `url(${el.pic})` }}
-                key={el.title}
-              >
-                <div className='flex flex-wrap items-center h-full w-full justify-center'>
-                  <h3 className='p-4 py-20 sm:py-14 text-white font-bold mb-auto text-center w-full uppercase text-2xl md:text-2xl xl:text-xl'>
-                    {el.title}
-                  </h3>
-                  <div className='w-100 h-36 bg-white p-4 hidden sm:flex items-center mt-auto mb-0 justify-center'>
+        <div>
+          <Scroll className='xl:hidden w-11 h-11 absolute top-3 right-0' />
+          <CarouselBaseSwiper
+            wrapperClass='clubs-services-slider gap-8'
+            data={data}
+            sliderId='clubs-services-slider'
+            breakpoints={breakpoints}
+            {...carouselProps}
+          >
+            {[...data].map((el, index) => (
+              <SwiperSlide key={index} className='overflow-hidden rounded-xl'>
+                <div
+                  className={`clubs-services-item rounded-4xl shadow-sm overflow-hidden`}
+                  key={el.title}
+                >
+                  <div
+                    className='clubs-item relative z-2 flex flex-wrap items-center h-32 w-full justify-center bg-no-repeat bg-cover'
+                    style={{ backgroundImage: `url(${el.pic})` }}
+                  >
+                    <h3 className='relative p-4 md:mt-10 text-white item-title mx-auto text-center w-full'>
+                      {el.title}
+                    </h3>
+                  </div>
+                  <div className='item-text w-100 h-36 bg-white p-4 hidden sm:flex items-center mt-auto mb-0 justify-center'>
                     {el.description}
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </CarouselBaseSwiper>
+              </SwiperSlide>
+            ))}
+          </CarouselBaseSwiper>
+        </div>
       ) : (
         <ul
-          className={`flex flex-wrap text-center justify-center gap-8 sm:gap-4`}
+          className={`flex flex-wrap text-center justify-center gap-8 sm:gap-8`}
         >
           {[...data].map((el) => (
             <li
-              className={`w-full sm:w-1/5 ${liClass}`}
+              className={`w-full sm:w-1/5 clubs-services-item ${liClass}`}
               key={el.title}
-              style={{ backgroundImage: `url(${el.pic})` }}
             >
-              <div className='flex flex-wrap items-center h-full w-full justify-center'>
-                <h3 className='p-4 py-20 sm:py-14 text-white font-bold mb-auto text-center w-full uppercase text-2xl sm:text-xl'>
+              <div
+                className='relative h-32 z-2 clubs-item flex flex-wrap items-center w-full justify-center bg-no-repeat bg-cover'
+                style={{ backgroundImage: `url(${el.pic})` }}
+              >
+                <h3 className='relative p-4 md:mt-10 text-white item-title mx-auto text-center w-full'>
                   {el.title}
                 </h3>
-                <div className='w-100 h-36 bg-white p-4 hidden sm:flex items-center mt-auto mb-0'>
-                  {el.description}
-                </div>
+              </div>
+              <div className='relative item-text w-100 h-36 bg-white p-4 hidden sm:flex items-center mt-auto mb-0'>
+                {el.description}
               </div>
             </li>
           ))}

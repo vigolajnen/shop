@@ -1,15 +1,14 @@
-import React from 'react'
-import { ROUTES } from '../../utils/routes'
-import { Link, useLocation } from 'react-router-dom'
+import React from 'react';
+import { ROUTES } from '../../utils/routes';
+import { Link, useLocation } from 'react-router-dom';
+
+import styles from './styles.module.css';
 
 export default function TariffLinkPay({ data, onClick }: any) {
   const location = useLocation();
-  
-  const btnClassListActive =
-    'btn tariff-btn-bg block p-4 w-full rounded-full text-center font-bold uppercase text-white';
 
-  const btnClassList =
-    'btn tariff-btn-bg-outline block p-4 w-full rounded-full text-center font-bold uppercase text-white';
+  const btnClassListActive = `${styles.btn} 'btn block p-4 w-full rounded-full text-center font-bold uppercase text-white'`;
+  const btnClassList = `${styles.btnOutline} 'btn block p-4 w-full rounded-full text-center font-bold uppercase text-white'`;
 
   return (
     <>
@@ -33,5 +32,5 @@ export default function TariffLinkPay({ data, onClick }: any) {
         </Link>
       )}
     </>
-  )
+  );
 }

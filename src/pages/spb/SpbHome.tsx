@@ -9,9 +9,9 @@ import {
 } from '../../components/tariffs/data/dataSpb';
 import { listFaqAccordion } from '../../components/faq-accordion/data';
 import { ALL_GALLERY_DATA } from '../../components/clubs-gallery/data/dataSpb';
-import { PROMO_CAROUSEL } from '../../components/promo-page/data/dataSpb';
+import { PROMO_CAROUSEL } from '../../components/promo/data/dataSpb';
 
-import PromoPage from '../../components/promo-page/PromoPage';
+import Promo from '../../components/promo/Promo';
 import Timer from '../../components/timer/Timer';
 import ClubServices from '../../components/club-services/ClubServices';
 import Advantages from '../../components/advantages/Advantages';
@@ -19,12 +19,25 @@ import Tariffs from '../../components/tariffs/Tariffs';
 import ClubsGallery from '../../components/clubs-gallery/ClubsGallery';
 import Faq from '../../components/faq/Faq';
 import FooterPage from '../../components/footer-page/FooterPage';
+import { Helmet } from 'react-helmet';
 
 const SpbHome = () => {
   return (
     <main className=''>
+      <Helmet>
+        <meta charSet='utf-8' />
+        <title>
+          Fitness House в Санкт-Петербурге | Безлимитный абонемент за месяц 1500
+          руб.
+        </title>
+        <meta
+          name='description'
+          content='Фитнес-клуб с оплатой за месяц 1500 руб. Спа, групповые занятия, тренажерный зал.'
+        />
+      </Helmet>
+
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <PromoPage data={PROMO_CAROUSEL} />
+        <Promo data={PROMO_CAROUSEL} />
       </motion.div>
 
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
@@ -47,11 +60,13 @@ const SpbHome = () => {
         <ClubsGallery title='клубы fitness house' data={ALL_GALLERY_DATA} />
       </motion.div>
 
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <Faq title='отвечаем на Вопросы' data={listFaqAccordion} />
-      </motion.div>
+      <div className='overflow-hidden'>
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          <Faq title='отвечаем на Вопросы' data={listFaqAccordion} />
+        </motion.div>
 
-      <FooterPage data={clubsAddress} />
+        <FooterPage data={clubsAddress} />
+      </div>
     </main>
   );
 };

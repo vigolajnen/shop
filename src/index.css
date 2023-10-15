@@ -17,7 +17,7 @@
   font-style: normal;
   font-display: swap;
   src: local('Gotham Pro'),
-    url('./fonts/GothaProReg_1.woff2') format('woff2');
+    url('./fonts/GothamPro.woff2') format('woff2');
 }
 
 @font-face {
@@ -26,14 +26,13 @@
   font-style: normal;
   font-display: swap;
   src: local('Gotham Pro'),
-    url('./fonts/GothaProBol.woff2') format('woff2');
+    url('./fonts/GothamPro-Bold.woff2') format('woff2');
 }
 
 body,
 html {
   padding: 0;
   margin: 0;
-  font-family: 'Gotham Pro', Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 130%;

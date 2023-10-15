@@ -45,7 +45,7 @@ export default function Modal({
         onClick={onClose}
       >
         <div
-          className={`mx-2 my-auto h-auto max-w-xl ${classBodyScroll}`}
+          className={`mx-2 my-auto h-auto w-full md:max-w-xl ${classBodyScroll}`}
           onClick={handelClick}
           role='document'
         >

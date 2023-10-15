@@ -6,14 +6,13 @@ import { Scrollbar } from 'swiper/modules';
 import { useModal } from '../../hooks/useModal';
 import { ITariffsProps } from '../../types';
 import TariffItem from '../tariff-item/TariffItem';
-import Section from '../../UI/section/Section';
-import SectionTitle from '../../UI/section-title/SectionTitle';
+import Section from '../UI/section/Section';
+import SectionTitle from '../UI/section-title/SectionTitle';
 import CarouselBaseSwiper from '../carousel-base-swiper/CarouselBaseSwiper';
-
 
 import 'swiper/css/scrollbar';
 import './styles.css';
-
+import { Scroll } from '../icons';
 
 export default function Tariffs({ title, data, count }: ITariffsProps) {
   const { openModal } = useModal();
@@ -32,7 +31,7 @@ export default function Tariffs({ title, data, count }: ITariffsProps) {
       slidesPerView: 2,
       spaceBetween: 20,
     },
-    1024: {
+    960: {
       slidesPerView: 2.7,
       spaceBetween: 20,
     },
@@ -54,36 +53,39 @@ export default function Tariffs({ title, data, count }: ITariffsProps) {
       styleInner='max-w-screen-xl overflow-hidden'
     >
       {title && (
-        <SectionTitle as='h3' styles='text-center text-white sm:mb-10'>
+        <SectionTitle as='h3' styles='text-center text-white'>
           {title}
         </SectionTitle>
       )}
 
       {matches ? (
         count && count > 2 ? (
-          <CarouselBaseSwiper
-            wrapperClass='tariffs-slider'
-            data={data}
-            sliderId='tariffs-slider'
-            breakpoints={breakpoints}
-            count={count}
-            {...carouselProps}
-          >
-            {[...data].map((el) => (
-              <SwiperSlide key={el.id}>
-                <TariffItem data={el} onClick={openModal} />
-              </SwiperSlide>
-            ))}
-          </CarouselBaseSwiper>
+          <div>
+            <Scroll className='xl:hidden w-11 h-11 absolute top-5 right-0 text-white-50' />
+            <CarouselBaseSwiper
+              wrapperClass='tariffs-slider'
+              data={data}
+              sliderId='tariffs-slider'
+              breakpoints={breakpoints}
+              count={count}
+              {...carouselProps}
+            >
+              {[...data].map((el) => (
+                <SwiperSlide key={el.id}>
+                  <TariffItem data={el} onClick={openModal} />
+                </SwiperSlide>
+              ))}
+            </CarouselBaseSwiper>
+          </div>
         ) : (
-          <div className='w-full overflow-y-auto flex flex-wrap sm:flex-nowrap justify-center py-4'>
+          <div className='w-full overflow-y-auto flex flex-wrap sm:flex-nowrap justify-center md:py-4'>
             {[...data].map((el) => (
               <TariffItem key={el.id} data={el} onClick={openModal} />
             ))}
           </div>
         )
       ) : (
-        <div className='w-full overflow-y-auto flex flex-wrap sm:flex-nowrap justify-center py-4'>
+        <div className='w-full overflow-y-auto flex flex-wrap sm:flex-nowrap justify-center md:py-4'>
           {[...data].map((el) => (
             <TariffItem key={el.id} data={el} onClick={openModal} />
           ))}

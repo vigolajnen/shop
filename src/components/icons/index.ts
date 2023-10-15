@@ -8,4 +8,7 @@ export { default as IconInformation } from "./IconInformation";
 export { default as IconPin } from "./IconPin";
 export { default as IconSun } from "./IconSun";
 export { default as Logo } from "./Logo";
+export { default as OrderCancel } from "./OrderCancel";
+export { default as OrderCheck } from "./OrderCheck";
+export { default as Scroll } from "./Scroll";
 export { default as Tooltip } from "./Tooltip";

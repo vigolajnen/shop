@@ -17,7 +17,7 @@ export default function HeaderPage() {
   });
   const headerRef = useRef<HTMLDivElement | null>(null);
   const classMenu =
-    'grid gap-5 w-max z-10 absolute -bottom-36 left-1/2 -translate-x-1/2 p-4 shadow-xl rounded-lg bg-white uppercase text-center text-mako-800 font-bold';
+    'grid gap-5 w-max z-10 absolute -bottom-36 left-1/2 -translate-x-1/2 px-8 py-5 shadow-xl rounded-lg bg-white uppercase text-center text-mako-800 font-bold';
 
   // handle scroll event
   const handleScroll = (elTopOffset: number, elHeight: number): void => {
@@ -78,7 +78,7 @@ export default function HeaderPage() {
         {cityName === listСities[0] ? (
           <NavLink
             to={ROUTES.HOME}
-            className='col-span-1 inline-block p-4 mb-2 text-center border-2 border-mako-800 rounded-lg bg-mako-800 hover:bg-white-50 text-white-50 hover:text-mako-800'
+            className='col-span-1 inline-block p-4 mb-2 ml-auto text-center border-2 border-mako-800 rounded-lg bg-mako-800 hover:bg-white-50 text-white-50 hover:text-mako-800 w-24'
             onClick={onClickLink}
           >
             Да
@@ -86,7 +86,7 @@ export default function HeaderPage() {
         ) : (
           <NavLink
             to={ROUTES.SPB}
-            className='col-span-1 inline-block p-4 mb-2 text-center border-2 border-mako-800 rounded-lg bg-mako-800 hover:bg-white-50 text-white-50 hover:text-mako-800'
+            className='col-span-1 inline-block p-4 mb-2 ml-auto text-center border-2 border-mako-800 rounded-lg bg-mako-800 hover:bg-white-50 text-white-50 hover:text-mako-800 w-24'
             onClick={onClickLink}
           >
             Да
@@ -96,7 +96,7 @@ export default function HeaderPage() {
         {cityName === listСities[0] ? (
           <NavLink
             to={ROUTES.SPB}
-            className='col-span-1 inline-block p-4 mb-2 text-center border-2 border-mako-800 rounded-lg hover:bg-mako-800 hover:text-white-50'
+            className='col-span-1 inline-block p-4 mb-2 text-center border-2 border-mako-800 rounded-lg hover:bg-mako-800 hover:text-white-50 w-24'
             onClick={onChangeLocation}
           >
             Нет
@@ -104,7 +104,7 @@ export default function HeaderPage() {
         ) : (
           <NavLink
             to={ROUTES.HOME}
-            className='col-span-1 inline-block p-4 mb-2 text-center border-2 border-mako-800 rounded-lg hover:bg-mako-800 hover:text-white-50'
+            className='col-span-1 inline-block p-4 mb-2 text-center border-2 border-mako-800 rounded-lg hover:bg-mako-800 hover:text-white-50 w-24'
             onClick={onChangeLocation}
           >
             Нет

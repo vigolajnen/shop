@@ -3,11 +3,11 @@ import { useLocation, useParams } from 'react-router';
 import { listTariffs } from '../tariffs/data/dataSam';
 import { listTariffs as listTariffsSpb } from '../tariffs/data/dataSpb';
 import { ROUTES } from '../../utils/routes';
-import FormStepFormik from '../form-step-formik/FormStepFormik';
+import Forms from '../forms/Forms';
+import FormProvider from '../forms/context';
 
 // data - нужно получать из хранилища по конкретному городу
 export default function FormOrderTariff() {
-
   const { id } = useParams();
   const location = useLocation();
   const tariffListSam = listTariffs;
@@ -27,9 +27,11 @@ export default function FormOrderTariff() {
 
   return (
     <div>
-      {/* <StepperForm /> */}
-      <FormStepFormik item={dataItem} />
-      <div>{dataItem.product.product_price}</div>
+      <FormProvider>
+        <Forms item={dataItem} />
+      </FormProvider>
+
+      {/* <div>{dataItem.product.product_price}</div> */}
     </div>
   );
 }

@@ -7,7 +7,7 @@ export default function TariffClubsInfo({
   clubs,
 }: ITariffClubsInfoProps) {
   return (
-    <div className="my-4">
+    <div className="my-2 md:my-4 opacity-70 text-sm md:text-base">
       <p>
         {type === 'morning' &&
           !mc &&
