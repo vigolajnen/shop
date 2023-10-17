@@ -8,10 +8,12 @@ import PIC_3 from '../../images/advantages/3.webp';
 import Section from '../UI/section/Section';
 import SectionTitle from '../UI/section-title/SectionTitle';
 
+import './styles.css';
+
 export default function Advantages({ title, data }: IAdvantagesProps) {
   return (
     <Section
-      styleWrapper='bg-gray-100 overflow-hidden'
+      styleWrapper='bg-gray-100 advantages'
       styleInner='xl:max-w-screen-lg flex flex-col sm:flex-row flex-wrap'
     >
       {title && (

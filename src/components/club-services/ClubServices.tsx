@@ -43,7 +43,7 @@ export default function ClubServices({ title, data }: IClubServicesProps) {
   };
 
   return (
-    <Section styleWrapper='bg-porcelain-50'>
+    <Section styleWrapper='bg-porcelain-50 clubs-services'>
       {title && (
         <SectionTitle as='h2' styles='text-center md:px-10'>
           {title}
@@ -52,7 +52,7 @@ export default function ClubServices({ title, data }: IClubServicesProps) {
 
       {matches ? (
         <div>
-          <Scroll className='xl:hidden w-11 h-11 absolute top-3 right-0' />
+          <Scroll className='xl:hidden w-8 h-8 absolute top-3 right-0' />
           <CarouselBaseSwiper
             wrapperClass='clubs-services-slider gap-8'
             data={data}
@@ -67,7 +67,7 @@ export default function ClubServices({ title, data }: IClubServicesProps) {
                   key={el.title}
                 >
                   <div
-                    className='clubs-item relative z-2 flex flex-wrap items-center h-32 w-full justify-center bg-no-repeat bg-cover'
+                    className='clubs-item relative z-2 flex flex-wrap items-center h-44 w-full justify-center bg-no-repeat bg-cover'
                     style={{ backgroundImage: `url(${el.pic})` }}
                   >
                     <h3 className='relative p-4 md:mt-10 text-white item-title mx-auto text-center w-full'>
@@ -92,7 +92,7 @@ export default function ClubServices({ title, data }: IClubServicesProps) {
               key={el.title}
             >
               <div
-                className='relative h-32 z-2 clubs-item flex flex-wrap items-center w-full justify-center bg-no-repeat bg-cover'
+                className='relative h-44 z-2 clubs-item flex flex-wrap items-center w-full justify-center bg-no-repeat bg-cover'
                 style={{ backgroundImage: `url(${el.pic})` }}
               >
                 <h3 className='relative p-4 md:mt-10 text-white item-title mx-auto text-center w-full'>

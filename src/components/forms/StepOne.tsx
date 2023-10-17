@@ -4,11 +4,18 @@ import { useForm } from 'react-hook-form';
 
 import InputMask from 'react-input-mask';
 import CustomLabelFields from '../UI/custom-fields/CustomLabelFields';
+import LinkCheck from './LinkCheck';
+import { checkPhone } from '../../utils';
 
-const isNotFilledTel = (v: any) =>
-  v && v.indexOf('_') === -1 ? undefined : 'Phone number is required.';
+// const isNotFilledTel = (v: string) =>
+//   v && v.indexOf('_') === -1 ? undefined : 'Phone number is required.';
 
-export const TEXT_ERROR_MESSAGE = 'Заполните поле.';
+const isNotFilledTel = (v: string) => {
+  return v && v.indexOf('_') === -1 && checkPhone(v) ? undefined : 'Phone number is required.';
+};
+  
+
+export const TEXT_ERROR_MESSAGE = 'Заполните поле';
 
 //css
 export const classNameInput: string =
@@ -30,7 +37,6 @@ const StepOne: FC<StepOneProps> = ({ next, setData }) => {
   const onSubmit = (values: any) => {
     setFormValues(values);
     setData(values);
-    console.log(values);
     next();
   };
   return (
@@ -94,6 +100,28 @@ const StepOne: FC<StepOneProps> = ({ next, setData }) => {
         >
           Далее
         </button>
+        <div>
+          <div className='relative flex flex-col gap-x-3 max-w-screen-sm'>
+            <label className='flex gap-x-3 pb-3 xl:pb-5'>
+              <span className='flex h-6 items-center'>
+                <input
+                  className={classNameInput}
+                  type='checkbox'
+                  {...register('isCheck', {
+                    required: true,
+                  })}
+                />
+              </span>
+              <LinkCheck />
+            </label>
+
+            {errors.isCheck && (
+              <small className='absolute bottom-0 right-0 text-md text-mexican-red-700'>
+                {TEXT_ERROR_MESSAGE}
+              </small>
+            )}
+          </div>
+        </div>
       </form>
     </>
   );

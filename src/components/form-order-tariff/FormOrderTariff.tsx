@@ -30,8 +30,6 @@ export default function FormOrderTariff() {
       <FormProvider>
         <Forms item={dataItem} />
       </FormProvider>
-
-      {/* <div>{dataItem.product.product_price}</div> */}
     </div>
   );
 }

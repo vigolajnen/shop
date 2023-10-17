@@ -10,7 +10,8 @@
     right: -10%;
     width: 278px;
     height: 290px;
-    background-image: url('../../images/decor/1.png');
+    background-image: url('../../images/decor/1.svg');
     background-repeat: no-repeat;
+    background-size: contain;
   }
 }

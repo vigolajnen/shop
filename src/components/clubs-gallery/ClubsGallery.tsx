@@ -90,7 +90,7 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
                 </span>
                 для спортивного и расслабленного плавания
               </div>
-              <Scroll className='w-11 h-11 absolute top-5 right-0 text-picton-blue-500' />
+              <Scroll className='w-8 h-8 absolute top-5 right-0 text-picton-blue-500' />
               <CarouselBaseSwiper
                 wrapperClass='pool-clubs-slider mb-2'
                 data={data}
@@ -123,7 +123,7 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
                   современный тренажёрный зал{' '}
                 </span>
               </div>
-              <Scroll className='w-11 h-11 absolute top-5 right-0 text-picton-blue-500' />
+              <Scroll className='w-8 h-8 absolute top-5 right-0 text-picton-blue-500' />
               <CarouselBaseSwiper
                 wrapperClass='gym-clubs-slider mb-2'
                 data={data}
@@ -156,7 +156,7 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
                 <br />
                 финская, русская, турецкая, инфракрасная сауны и соляная комната
               </div>
-              <Scroll className='w-11 h-11 absolute top-5 right-0 text-picton-blue-500' />
+              <Scroll className='w-8 h-8 absolute top-5 right-0 text-picton-blue-500' />
               <CarouselBaseSwiper
                 wrapperClass='spa-clubs-slider mb-2'
                 data={data}
@@ -191,7 +191,7 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
                   растяжка, гимнастика, силовые, аквааэробика
                 </span>
               </div>
-              <Scroll className='w-11 h-11 absolute top-5 right-0 text-picton-blue-500' />
+              <Scroll className='w-8 h-8 absolute top-5 right-0 text-picton-blue-500' />
               <CarouselBaseSwiper
                 wrapperClass='spa-clubs-slider mb-2'
                 data={data}

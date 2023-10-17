@@ -7,7 +7,7 @@ import './styles.css';
 
 export default function Promo({ data }: IPromoData) {
   return (
-    <div className='w-full h-full overflow-hidden promo'>
+    <div className='w-full h-full overflow-hidden promo bg-curious-blue-500'>
       <CarouselPromo data={data} styles='max-w-screen-xl mx-auto h-full' />
     </div>
   );

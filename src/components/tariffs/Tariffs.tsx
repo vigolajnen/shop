@@ -61,7 +61,7 @@ export default function Tariffs({ title, data, count }: ITariffsProps) {
       {matches ? (
         count && count > 2 ? (
           <div>
-            <Scroll className='xl:hidden w-11 h-11 absolute top-5 right-0 text-white-50' />
+            <Scroll className='xl:hidden w-8 h-8 absolute top-5 right-0 text-white-50' />
             <CarouselBaseSwiper
               wrapperClass='tariffs-slider'
               data={data}

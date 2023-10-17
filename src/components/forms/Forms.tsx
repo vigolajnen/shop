@@ -38,7 +38,7 @@ export default function Forms({ item }: any) {
   const { currentStepIndex, next, step, steps } = useMultyStepForm([
     <StepOne next={onSubmit} setData={setData} />,
     <StepTwo next={onSubmit} data={data} item={item} />,
-    <FormCompleted item={item} />,
+    <FormCompleted item={item}  />,
   ]);
   return (
     <div className='w-full py-10 md:py-0'>
