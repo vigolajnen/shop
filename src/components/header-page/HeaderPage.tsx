@@ -11,6 +11,7 @@ export default function HeaderPage() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [cityName, setCityName] = useState(listСities[0]);
+  const localCity = sessionStorage.getItem('city');
   const [sticky, setSticky] = useState<{ isSticky: boolean; offset: number }>({
     isSticky: false,
     offset: 0,
@@ -30,20 +31,35 @@ export default function HeaderPage() {
 
   const onClickLink = () => {
     setIsOpen(true);
+    sessionStorage.setItem('city', cityName);
   };
 
   const onChangeLocation = () => {
     setIsOpen(true);
 
-    location.pathname !== ROUTES.SPB
-      ? setCityName(listСities[1])
-      : setCityName(listСities[0]);
+    // location.pathname !== ROUTES.SPB
+    //   ? setCityName(listСities[1])
+    //   : setCityName(listСities[0]);
+
+    if (location.pathname !== ROUTES.SPB) {
+      setCityName(listСities[1]);
+      sessionStorage.setItem('city', listСities[1]);
+    } else {
+      setCityName(listСities[0]);
+      sessionStorage.setItem('city', listСities[0]);
+    }
   };
 
   useEffect(() => {
-    location.pathname === ROUTES.SPB && setCityName(listСities[1]);
     setIsOpen(false);
-  }, []);
+
+    if (!!localCity) {
+      setIsOpen(true);
+      location.pathname === ROUTES.SPB && setCityName(listСities[1]);
+      console.log(localCity);
+    }
+
+  }, [localCity, location.pathname]);
 
   // add/remove scroll event listener
   useEffect(() => {
@@ -61,13 +77,15 @@ export default function HeaderPage() {
     <header
       id='sticky-header'
       className={`bg-curious-blue-200 font-bold px-4 lg:px-6 transition-all  ${
-        sticky.isSticky ? 'sticky top-0 z-50 shadow-lg py-4 bg-white-50' : 'relative py-2.5'
+        sticky.isSticky
+          ? 'sticky top-0 z-50 shadow-lg py-4 bg-white-50'
+          : 'relative py-2.5'
       }`}
       ref={headerRef}
     >
       <nav className='container mx-auto w-full max-w-screen-xl'>
         <div className='flex flex-wrap justify-between w-full items-center mx-auto'>
-          <SvgLogo width={160} height={27} className="w-28 sm:w-30" />
+          <SvgLogo width={160} height={27} className='w-28 sm:w-30' />
           <CitysHeader />
           <div className='hidden sm:flex'>{TEXT}</div>
         </div>

@@ -1,14 +1,22 @@
 .promo .swiper {
   min-height: 372px;
-  background-color: #1c8ac8;
+  /* background-color: #1c8ac8; */
+}
+
+.promo .swiper-fade .swiper-slide {
+  opacity: 0 !important;
+}
+
+.promo .swiper-fade .swiper-slide-active {
+  opacity: 1 !important;
 }
 
 .promo .swiper-pagination {
-  bottom: 30px;
+  bottom: 15px;
 }
 
 .promo .swiper-pagination-bullet {
-  width: 50px;
+  width: 25px;
   height: 5px;
   border-radius: 3px;
   border: none;
@@ -22,6 +30,7 @@
 
 .promo .swiper-button-prev,
 .promo .swiper-button-next {
+  display: none;
   width: 3rem;
   height: 3rem;
   font-size: 1.5rem;
@@ -40,4 +49,20 @@
 .promo .swiper-button-next:hover {
   color: #fff;
   background-color: #fff06b;
+}
+
+@media (min-width: 640px) {
+  .promo .swiper-button-prev,
+  .promo .swiper-button-next {
+    display: flex;
+  }
+
+  .promo .swiper-pagination {
+    bottom: 30px;
+  }
+
+  .promo .swiper-pagination-bullet {
+    width: 50px;
+    height: 5px;
+  }
 }

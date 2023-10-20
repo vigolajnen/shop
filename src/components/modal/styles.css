@@ -1,4 +1,3 @@
-
 .scrollBar::-webkit-scrollbar {
   width: 7px;
 }
@@ -11,4 +10,24 @@
 .scrollBar::-webkit-scrollbar-thumb {
   background: #c4c4c4;
   border-radius: 41px;
+}
+
+.modalContent {
+  padding: 0 10px;
+}
+
+@media (min-width: 640px) {
+  .modalContent {
+    padding: 5vw 7vw;
+  }
+}
+
+@media (min-width: 1150px) {
+  .modalContent {
+    padding: 60px 80px;
+  }
+}
+
+.modal-open {
+  overflow: hidden;
 }

@@ -14,7 +14,7 @@ export default function FooterPage({ data }: IFooterPageProps) {
           <ClubsAddress data={data} />
         </div>
 
-        <div className='flex flex-wrap justify-between'>
+        <div className='pt-3 flex flex-wrap gap-3 justify-between opacity-70 text-sm'>
           {[...arrayDocLinks].map((el, index) => (
             <a
               href={el.url}

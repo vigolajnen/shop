@@ -1,5 +1,5 @@
 // проверка ответа
-const checkResponse = res => {
+export const checkResponse = res => {
   console.log(res);
   if (res.ok) {
     return res.json();
@@ -7,7 +7,7 @@ const checkResponse = res => {
   return Promise.reject(`Ошибка ${res.status}`);
 };
 
-const checkSuccess = res => {
+export const checkSuccess = res => {
   if (res) {
     return res;
   }

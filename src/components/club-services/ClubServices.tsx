@@ -45,7 +45,7 @@ export default function ClubServices({ title, data }: IClubServicesProps) {
   return (
     <Section styleWrapper='bg-porcelain-50 clubs-services'>
       {title && (
-        <SectionTitle as='h2' styles='text-center md:px-10'>
+        <SectionTitle as='h2' styles='md:px-10 xl:px-0'>
           {title}
         </SectionTitle>
       )}
@@ -67,7 +67,7 @@ export default function ClubServices({ title, data }: IClubServicesProps) {
                   key={el.title}
                 >
                   <div
-                    className='clubs-item relative z-2 flex flex-wrap items-center h-44 w-full justify-center bg-no-repeat bg-cover'
+                    className='clubs-item relative z-2 flex flex-wrap items-center h-32 w-full justify-center bg-no-repeat bg-cover'
                     style={{ backgroundImage: `url(${el.pic})` }}
                   >
                     <h3 className='relative p-4 md:mt-10 text-white item-title mx-auto text-center w-full'>
@@ -84,15 +84,15 @@ export default function ClubServices({ title, data }: IClubServicesProps) {
         </div>
       ) : (
         <ul
-          className={`flex flex-wrap text-center justify-center gap-8 sm:gap-8`}
+          className={`flex flex-wrap text-center justify-center gap-4 md:gap-6`}
         >
           {[...data].map((el) => (
             <li
-              className={`w-full sm:w-1/5 clubs-services-item ${liClass}`}
+              className={`w-full sm:w-1/5 clubs-services-item grow ${liClass}`}
               key={el.title}
             >
               <div
-                className='relative h-44 z-2 clubs-item flex flex-wrap items-center w-full justify-center bg-no-repeat bg-cover'
+                className='relative h-32 z-2 clubs-item flex flex-wrap items-center w-full justify-center bg-no-repeat bg-cover'
                 style={{ backgroundImage: `url(${el.pic})` }}
               >
                 <h3 className='relative p-4 md:mt-10 text-white item-title mx-auto text-center w-full'>

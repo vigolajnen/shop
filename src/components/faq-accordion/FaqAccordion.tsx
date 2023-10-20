@@ -15,9 +15,9 @@ export default function FaqAccordion({ data }: IFaqAccordionProps) {
             <span className="w-4/5 block">{el.title}</span>
           </label>
           <div className='accordion__content overflow-hidden bg-grey-lighter'>
-            <p className='accordion__body p-4' id={`panel${el.id}`}>
+            <div className='accordion__body p-4' id={`panel${el.id}`}>
               {el.text}
-            </p>
+            </div>
           </div>
         </div>
       ))}

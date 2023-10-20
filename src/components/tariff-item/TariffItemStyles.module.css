@@ -1,3 +1,7 @@
+.tariff {
+  height: 100%;
+}
+
 @media (min-width: 567px) {
   .tariff {
     max-width: 360px;
@@ -38,7 +42,8 @@
 
 @media (min-width: 960px) {
   .tariff {
-    max-width: 390px;
+    max-width: 335px;
+    height: 100%;
   }
 
   .price {

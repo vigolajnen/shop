@@ -13,7 +13,7 @@ export default function TariffHeader({ type, mc }: ITariffItemHeaderProps) {
           <IconSun
             width={36}
             height={36}
-            className='mr-1 xs:mr-2 sm:mr-3 my-auto w-6 sm:w-10'
+            className='mr-1 xs:mr-1 sm:mr-2 my-auto w-6 sm:w-10'
           />
           <div className='w-2/3 grow'>
             <div><b>Утренний в 1 клуб</b></div>
@@ -26,7 +26,7 @@ export default function TariffHeader({ type, mc }: ITariffItemHeaderProps) {
           <IconCheck
             width={36}
             height={36}
-            className='mr-1 xs:mr-2 sm:mr-3 my-auto w-6 sm:w-10'
+            className='mr-1 xs:mr-1 sm:mr-2 my-auto w-6 sm:w-10'
           />
           <div className='w-2/3 grow'>
             <div><b>Весь день в 1 клуб</b></div>
@@ -39,7 +39,7 @@ export default function TariffHeader({ type, mc }: ITariffItemHeaderProps) {
           <IconCrownsvg
             width={36}
             height={36}
-            className='mr-1 xs:mr-2 sm:mr-3 my-auto w-6 sm:w-10'
+            className='mr-1 xs:mr-1 sm:mr-2 my-auto w-6 sm:w-10'
           />
           <div className='w-2/3 grow'>
             <div><b>Весь день во все клубы</b></div>

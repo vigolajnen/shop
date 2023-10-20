@@ -6,20 +6,22 @@ import InputMask from 'react-input-mask';
 import CustomLabelFields from '../UI/custom-fields/CustomLabelFields';
 import LinkCheck from './LinkCheck';
 import { checkPhone } from '../../utils';
-
-// const isNotFilledTel = (v: string) =>
-//   v && v.indexOf('_') === -1 ? undefined : 'Phone number is required.';
+import { checkResponse, checkSuccess, generalRequest } from '../../utils/api';
 
 const isNotFilledTel = (v: string) => {
-  return v && v.indexOf('_') === -1 && checkPhone(v) ? undefined : 'Phone number is required.';
+  return v && v.indexOf('_') === -1 && checkPhone(v)
+    ? undefined
+    : 'Phone number is required.';
 };
-  
 
 export const TEXT_ERROR_MESSAGE = 'Заполните поле';
 
 //css
 export const classNameInput: string =
   'block h-11 w-full flex-1 font-normal border-2 border-mako-100 focus:border-mako-500 rounded-md bg-transparent p-2 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6';
+export const classNameInputCheck: string =
+  'block h-4 w-4 flex-1 font-normal border-2 border-mako-100 focus:border-mako-500 rounded-md bg-transparent p-2 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6';
+
 
 interface StepOneProps {
   next: any;
@@ -37,6 +39,19 @@ const StepOne: FC<StepOneProps> = ({ next, setData }) => {
   const onSubmit = (values: any) => {
     setFormValues(values);
     setData(values);
+    console.log(values);
+
+    // fetch('', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json;charset=utf-8',
+    //   },
+    //   body: JSON.stringify(values),
+    //   redirect: 'follow',
+    // })
+    //   .then(checkResponse)
+    //   .then(checkSuccess);
+    
     next();
   };
   return (
@@ -46,7 +61,7 @@ const StepOne: FC<StepOneProps> = ({ next, setData }) => {
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className='flex flex-col grow w-full'
+        className='flex flex-col grow w-full mt-6'
       >
         <div className='mb-2 px-2 flex flex-col w-full'>
           <CustomLabelFields label='Имя'>
@@ -105,7 +120,7 @@ const StepOne: FC<StepOneProps> = ({ next, setData }) => {
             <label className='flex gap-x-3 pb-3 xl:pb-5'>
               <span className='flex h-6 items-center'>
                 <input
-                  className={classNameInput}
+                  className={classNameInputCheck}
                   type='checkbox'
                   {...register('isCheck', {
                     required: true,

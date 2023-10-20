@@ -58,7 +58,7 @@ export default function Timer({ title, endDate, startDate }: ITimerProps) {
       styleWrapper=''
       styleInner='overflow-hidden max-w-screen-lg w-full sm:px-4 xl:px-10 sm:w-full flex flex-wrap justify-between lg:justify-center items-center'
     >
-      <h2 className='mb-4 lg:mb-0 w-full grow lg:w-1/4 xl:w-56 timer-title uppercase text-center lg:text-left'>
+      <h2 className='relative z-10 mb-4 lg:mb-0 w-full grow lg:w-1/4 xl:w-56 timer-title uppercase text-center lg:text-left'>
         {title}
       </h2>
 

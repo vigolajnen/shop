@@ -6,6 +6,8 @@ import { useModal } from '../../hooks/useModal';
 
 import { IModalProps } from '../../types';
 
+import './styles.css';
+
 export default function Modal({
   onClose,
   children,
@@ -49,7 +51,8 @@ export default function Modal({
           onClick={handelClick}
           role='document'
         >
-          <div className='max-h-screen border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none'>
+          {/* max-h-screen  */}
+          <div className='overflow-y-auto border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none'>
             <div className='absolute top-0 right-0 flex items-start justify-between p-0 border-0 border-solid border-blueGray-200 rounded-t'>
               <div className='text-3xl font-semibold'>{title}</div>
               <button

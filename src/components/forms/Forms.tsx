@@ -41,7 +41,7 @@ export default function Forms({ item }: any) {
     <FormCompleted item={item}  />,
   ]);
   return (
-    <div className='w-full py-10 md:py-0'>
+    <div className='w-full pt-6 pb-4 sm:py-10 md:py-0'>
       <Stepper activeStep={currentStepIndex}>
         {[...steps].map((el, index) => (
           <Step label='' key={index} />

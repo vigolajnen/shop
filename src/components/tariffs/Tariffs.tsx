@@ -37,7 +37,7 @@ export default function Tariffs({ title, data, count }: ITariffsProps) {
     },
     1200: {
       slidesPerView: 3,
-      spaceBetween: 30,
+      spaceBetween: 20,
     },
   };
 
@@ -71,7 +71,7 @@ export default function Tariffs({ title, data, count }: ITariffsProps) {
               {...carouselProps}
             >
               {[...data].map((el) => (
-                <SwiperSlide key={el.id}>
+                <SwiperSlide key={el.id} className="h-auto">
                   <TariffItem data={el} onClick={openModal} />
                 </SwiperSlide>
               ))}
