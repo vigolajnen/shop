@@ -2,7 +2,7 @@
   "name": "shop",
   "version": "0.1.0",
   "private": true,
-  "homepage": "../",
+  "homepage": "http://vigolajnen.github.io/shop/",
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
     "@reduxjs/toolkit": "^1.9.7",
