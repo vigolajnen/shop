@@ -14,7 +14,7 @@ export default function SectionTitle({
   const classBase = `${styles} ${sectionTitleStyles.title} relative mb-9 sm:mb-10 xl:mb-13 mb uppercase`;
   return (
     <Tag
-      className={location.pathname === ROUTES.SPB ? classBase + 'text-center' : classBase}
+      className={location.pathname === ROUTES.SPB ? classBase + ' text-center' : classBase}
     >
       {children}
     </Tag>

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import { ICustomLabelFieldsProps } from '../../../types';
 
 const CustomLabelFields: FC<ICustomLabelFieldsProps> = ({ htmlFor, children, label, ...props }: ICustomLabelFieldsProps) => {

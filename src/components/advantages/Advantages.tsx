@@ -14,18 +14,18 @@ export default function Advantages({ title, data }: IAdvantagesProps) {
   return (
     <Section
       styleWrapper='bg-gray-100 advantages'
-      styleInner='xl:max-w-screen-lg flex flex-col sm:flex-row flex-wrap'
+      styleInner='max-w-screen-xlg flex flex-col sm:flex-row flex-wrap'
     >
       {title && (
         <div className='relative pt-40 sm:pt-16 xl:pt-0 grow lg:w-1/3 flex flex-col items-center'>
           <SectionTitle
             as='h3'
-            styles='relative z-3 px-10 md:px-4 mx-0 mr-auto text-center max-w-xs sm:text-left sm:my-auto'
+            styles='advantages-title relative z-3 px-10 md:px-4 mx-0 mr-auto text-center max-w-xs sm:text-left sm:my-auto'
           >
             {title}
           </SectionTitle>
 
-          <div className='absolute top-0 left-1/2 -translate-x-1/2 sm:translate-x-0 xs:left-1/2 md:left-1/3 lg:left-0 w-full sm:w-1/2 lg:w-full h-60 overflow-hidden'>
+          <div className='advantages-bg absolute top-0 left-1/2 -translate-x-1/2 sm:translate-x-0 xs:left-1/2 md:left-1/3 lg:left-0 w-full sm:w-1/2 lg:w-full h-60 overflow-hidden'>
             <div
               className='absolute z-0 top-20 right-10 md:top-5 md:left-40 w-20 h-20 md:w-28 md:h-28 bg-white-700 border-4 border-white rounded-2xl'
               style={{ backgroundImage: `url(${PIC_3})` }}

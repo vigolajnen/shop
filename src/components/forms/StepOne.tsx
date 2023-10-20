@@ -6,7 +6,7 @@ import InputMask from 'react-input-mask';
 import CustomLabelFields from '../UI/custom-fields/CustomLabelFields';
 import LinkCheck from './LinkCheck';
 import { checkPhone } from '../../utils';
-import { checkResponse, checkSuccess, generalRequest } from '../../utils/api';
+// import { checkResponse, checkSuccess, generalRequest } from '../../utils/api';
 
 const isNotFilledTel = (v: string) => {
   return v && v.indexOf('_') === -1 && checkPhone(v)

@@ -11,3 +11,16 @@
     background-size: contain;
   }
 }
+
+.advantages-bg {
+  max-width: 320px;
+  margin-right: auto;
+}
+
+@media (max-width: 566px) {
+  .advantages-title {
+    font-size: 35px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+}

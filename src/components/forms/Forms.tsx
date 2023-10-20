@@ -4,7 +4,7 @@ import { useMultyStepForm } from '../../hooks/useMultiStepForm';
 import StepOne from './StepOne';
 import StepTwo from './StepTwo';
 import FormCompleted from './FormCompleted';
-import { useFormData } from './context';
+// import { useFormData } from './context';
 
 import './styles.css';
 
@@ -29,7 +29,7 @@ const initialState: FormData = {
 };
 
 export default function Forms({ item }: any) {
-  const { setFormValues } = useFormData();
+  // const { setFormValues } = useFormData();
   const [data, setData] = useState<FormData>(initialState);
 
   const onSubmit = () => {

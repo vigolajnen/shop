@@ -56,7 +56,7 @@ export default function HeaderPage() {
     if (!!localCity) {
       setIsOpen(true);
       location.pathname === ROUTES.SPB && setCityName(listСities[1]);
-      console.log(localCity);
+      // console.log(localCity);
     }
 
   }, [localCity, location.pathname]);

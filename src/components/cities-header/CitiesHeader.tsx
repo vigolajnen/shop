@@ -32,7 +32,7 @@ export default function CitiesHeader() {
     location.pathname === ROUTES.SPB
       ? setCity(cities[0].name)
       : setCity(cities[1].name);
-  }, [location, cities]);
+  }, [location.pathname]);
   return (
     <div className='relative font-bold'>
       <button

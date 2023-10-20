@@ -1,10 +1,10 @@
-import { generalRequest } from '../../utils';
-import { orderData } from '../../utils/order';
+// import { generalRequest } from '../../utils';
+// import { orderData } from '../../utils/order';
 import { OrderCheck } from '../icons';
-import { useFormData } from './context';
+// import { useFormData } from './context';
 
 export default function FormCompleted({ item }) {
-  const { data } = useFormData();
+  // const { data } = useFormData();
   // const allDataForm = orderData(data, item);
   // console.log(allDataForm);
 

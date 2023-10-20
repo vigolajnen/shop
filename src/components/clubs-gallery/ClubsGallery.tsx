@@ -56,10 +56,10 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
   return (
     <Section
       styleWrapper='bg-porcelain-50 px-0 clubsGallery'
-      styleInner='max-w-screen-xl relative'
+      styleInner='relative'
     >
       {title && (
-        <SectionTitle as='h3' styles='px-4 text-center md:text-left'>
+        <SectionTitle as='h3' styles='px-4 xl:px-0 text-center md:text-left'>
           {title}
         </SectionTitle>
       )}
