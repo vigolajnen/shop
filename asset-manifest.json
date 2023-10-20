@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/shop/static/css/main.68ddf851.css",
-    "main.js": "/shop/static/js/main.6705d597.js",
+    "main.css": "/shop/static/css/main.8670225b.css",
+    "main.js": "/shop/static/js/main.f3e379ee.js",
+    "static/media/1.svg": "/shop/static/media/1.9e7af82b7044c63bbfd8.svg",
+    "static/media/2.png": "/shop/static/media/2.200117ede5632c962a77.png",
     "static/media/1.jpg": "/shop/static/media/1.3675101f43fc8243b3dc.jpg",
-    "static/media/1.png": "/shop/static/media/1.4f2acc45c16b3b5e32b8.png",
     "static/media/2.webp": "/shop/static/media/2.cd70f042285a02fad48c.webp",
     "static/media/3.webp": "/shop/static/media/3.05db2540eb22a67877eb.webp",
     "static/media/1.webp": "/shop/static/media/1.6efd41186ddbb123c86e.webp",
@@ -18,13 +19,14 @@
     "static/media/group.webp": "/shop/static/media/group.d11744ebdf857737de5a.webp",
     "static/media/gym.webp": "/shop/static/media/gym.15c8a9b090de0ad1ab11.webp",
     "static/media/pool.webp": "/shop/static/media/pool.99b33f3b379e678c5604.webp",
-    "static/media/2.svg": "/shop/static/media/2.471ab25c7555d24a380e.svg",
+    "static/media/4.svg": "/shop/static/media/4.f0eec470894e56c555c9.svg",
+    "static/media/3.svg": "/shop/static/media/3.b1c822c4218a0efe9c43.svg",
     "index.html": "/shop/index.html",
-    "main.68ddf851.css.map": "/shop/static/css/main.68ddf851.css.map",
-    "main.6705d597.js.map": "/shop/static/js/main.6705d597.js.map"
+    "main.8670225b.css.map": "/shop/static/css/main.8670225b.css.map",
+    "main.f3e379ee.js.map": "/shop/static/js/main.f3e379ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.68ddf851.css",
-    "static/js/main.6705d597.js"
+    "static/css/main.8670225b.css",
+    "static/js/main.f3e379ee.js"
   ]
 }
