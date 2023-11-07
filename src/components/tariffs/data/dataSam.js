@@ -34,7 +34,7 @@ export const clubsFormMulty = [...clubsAddress].filter(
   item => item.name === 'Шипка',
 );
 
-export const listTariffs1 = [
+export const listTariffs = [
   {
     id: 1,
     type: 'morning',
@@ -97,4 +97,4 @@ export const listTariffs1 = [
   },
 ];
 
-export const listTariffs = [...listTariffs1];
+export const LIST_TARIFFS_SAMARA = [...listTariffs];

@@ -1,38 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import { ROUTES } from '../../utils/routes';
+import React, { useContext, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { CITIES_ROUTERS } from '../../utils/routes';
+import { CityContext } from '../../context/CityContext';
 
 export default function CitiesHeader() {
-  const location = useLocation();
+  const CITY_PAGE = useContext(CityContext).city;
   const [isOpen, setIsOpen] = useState(false);
-  const [city, setCity] = useState('Самара');
 
-  const cities = [
-    {
-      id: 1,
-      name: 'Санкт-Петербург',
-      url: `${ROUTES.SPB}`,
-    },
-    {
-      id: 2,
-      name: 'Самара',
-      url: `${ROUTES.HOME}`,
-    },
-  ];
+  const CITIES = CITIES_ROUTERS;
 
   const classMenu =
     'z-10 absolute top-100 right-0 bg-white p-4 pt-6 rounded-lg shadow w-64 m-2 text-center uppercase';
 
   const onClickPoint = (e: any): void => {
     setIsOpen(false);
-    setCity(e.target.innerText);
   };
 
-  useEffect(() => {
-    location.pathname === ROUTES.SPB
-      ? setCity(cities[0].name)
-      : setCity(cities[1].name);
-  }, [location.pathname]);
   return (
     <div className='relative font-bold'>
       <button
@@ -43,7 +26,7 @@ export default function CitiesHeader() {
         type='button'
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        {city}{' '}
+        {CITY_PAGE}{' '}
         <svg
           className='w-2.5 h-2.5 ml-2.5'
           aria-hidden='true'
@@ -66,21 +49,19 @@ export default function CitiesHeader() {
         className={`${classMenu} ${!isOpen ? 'hidden' : ''}`}
       >
         <h3>Выберите город</h3>
-        <ul
-          className='py-2 mt-2 text-sm'
-          aria-labelledby='dropdownHoverButton'
-        >
-          {[...cities].map((city) => (
-            <li key={city.id}>
-              <NavLink
-                to={city.url}
-                className='block p-4 mb-3 text-center text-mako-800 border-2 border-mako-800 rounded-lg hover:bg-mako-800 hover:text-white-50'
-                onClick={onClickPoint}
-              >
-                {city.name}
-              </NavLink>
-            </li>
-          ))}
+        <ul className='py-2 mt-2 text-sm' aria-labelledby='dropdownHoverButton'>
+          {CITIES.length > 0 &&
+            [...CITIES].map((city: any, index) => (
+              <li key={index}>
+                <NavLink
+                  to={city[1].URL}
+                  className='block p-4 mb-3 text-center text-mako-800 border-2 border-mako-800 rounded-lg hover:bg-mako-800 hover:text-white-50'
+                  onClick={onClickPoint}
+                >
+                  {city[1].NAME}
+                </NavLink>
+              </li>
+            ))}
         </ul>
       </div>
     </div>

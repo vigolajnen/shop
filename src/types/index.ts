@@ -22,8 +22,6 @@ export interface IAdvantagesProps {
 
 export interface ITariffsProps {
   title?: string;
-  data: any;
-  count?: number;
 }
 
 export interface ITariffItemProps {
@@ -82,7 +80,6 @@ export interface ICarouselBaseProps {
 }
 
 export interface ICarouselPromoProps {
-  data?: any;
   styles?: string;
   onClick?: any;
 }

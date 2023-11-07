@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 import { SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
 
-import { IClubsGalleryProps } from '../../types';
+import { CityContext } from '../../context/CityContext';
+import { ALL_GALLERY_DATA_SPB } from './data/dataSpb';
+import { ROUTES } from '../../utils/routes';
+import { ALL_GALLERY_DATA_SAMARA } from './data/dataSam';
 import Section from '../UI/section/Section';
 import SectionTitle from '../UI/section-title/SectionTitle';
 import CarouselBaseSwiper from '../carousel-base-swiper/CarouselBaseSwiper';
@@ -13,7 +16,24 @@ import 'swiper/css/scrollbar';
 import './styles.css';
 import { Scroll } from '../icons';
 
-export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
+interface ClubsGalleryProps {
+  title: string;
+}
+
+export default function ClubsGallery({ title }: ClubsGalleryProps) {
+  const CITY_NAME = useContext(CityContext).city;
+  const getDataList = () => {
+    if (CITY_NAME === ROUTES.HOME.NAME) {
+      return [ALL_GALLERY_DATA_SAMARA].filter(
+        (val) => val.city === CITY_NAME,
+      )[0].list;
+    } else if (CITY_NAME === ROUTES.SPB.NAME) {
+      return [ALL_GALLERY_DATA_SPB].filter((val) => val.city === CITY_NAME)[0]
+        .list;
+    }
+  };
+  const data = getDataList();
+
   const matches = useMediaQuery('(min-width: 567px)');
 
   const sliderMainData = data?.find((el: any) => el.name === 'main')?.arrayData;
@@ -22,7 +42,7 @@ export default function ClubsGallery({ title, data }: IClubsGalleryProps) {
   const sliderSpaData = data?.find((el: any) => el.name === 'spa')?.arrayData;
   const sliderGroupData = data?.find(
     (el: any) => el.name === 'group',
-  ).arrayData;
+  )?.arrayData;
 
   const breakpoints = {
     320: {

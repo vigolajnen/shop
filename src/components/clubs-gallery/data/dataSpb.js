@@ -18,6 +18,7 @@ import PIC_GROUP_3 from '../../../images/clubs/spb/group/3.webp';
 import PIC_GROUP_4 from '../../../images/clubs/spb/group/4.webp';
 import PIC_GROUP_5 from '../../../images/clubs/spb/group/5.webp';
 import PIC_GROUP_6 from '../../../images/clubs/spb/group/6.webp';
+import { ROUTES } from '../../../utils/routes';
 
 const MAIN_DATA = [PIC_MAIN_1, PIC_MAIN_2, PIC_MAIN_3, PIC_MAIN_4];
 
@@ -34,21 +35,24 @@ const GROUP_DATA = [
   PIC_GROUP_6,
 ];
 
-export const ALL_GALLERY_DATA = [
-  {
-    name: 'main',
-    arrayData: [...MAIN_DATA],
-  },
-  {
-    name: 'gym',
-    arrayData: [...GYM_DATA],
-  },
-  {
-    name: 'spa',
-    arrayData: [...SPA_DATA],
-  },
-  {
-    name: 'group',
-    arrayData: [...GROUP_DATA],
-  },
-];
+export const ALL_GALLERY_DATA_SPB = {
+  city: ROUTES.SPB.NAME,
+  list: [
+    {
+      name: 'main',
+      arrayData: [...MAIN_DATA],
+    },
+    {
+      name: 'gym',
+      arrayData: [...GYM_DATA],
+    },
+    {
+      name: 'spa',
+      arrayData: [...SPA_DATA],
+    },
+    {
+      name: 'group',
+      arrayData: [...GROUP_DATA],
+    },
+  ],
+};

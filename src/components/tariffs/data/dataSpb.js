@@ -9,7 +9,7 @@ export const clubsAddress = [
   },
 ];
 
-export const listTariffs = [
+const listTariffs = [
   {
     id: 1,
     type: 'morning',
@@ -52,3 +52,5 @@ export const listTariffs = [
     clubsForm: clubsAddress,
   },
 ];
+
+export const LIST_TARIFFS_SPB = [...listTariffs];

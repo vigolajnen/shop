@@ -1,17 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import SvgLogo from '../icons/Logo';
-import CitysHeader from '../cities-header/CitiesHeader';
+import CitiesHeader from '../cities-header/CitiesHeader';
 import { ROUTES } from '../../utils/routes';
+import { CityContext } from '../../context/CityContext';
 
 export default function HeaderPage() {
+  const CITY_PAGE = useContext(CityContext).city;
   const TEXT = 'рядом с домом';
-  const listСities = ['Самара', 'Санкт-Петербург'];
-  const location = useLocation();
+
   const [isOpen, setIsOpen] = useState(false);
-  const [cityName, setCityName] = useState(listСities[0]);
   const localCity = sessionStorage.getItem('city');
+
   const [sticky, setSticky] = useState<{ isSticky: boolean; offset: number }>({
     isSticky: false,
     offset: 0,
@@ -31,22 +32,16 @@ export default function HeaderPage() {
 
   const onClickLink = () => {
     setIsOpen(true);
-    sessionStorage.setItem('city', cityName);
+    sessionStorage.setItem('city', CITY_PAGE);
   };
 
   const onChangeLocation = () => {
     setIsOpen(true);
 
-    // location.pathname !== ROUTES.SPB
-    //   ? setCityName(listСities[1])
-    //   : setCityName(listСities[0]);
-
-    if (location.pathname !== ROUTES.SPB) {
-      setCityName(listСities[1]);
-      sessionStorage.setItem('city', listСities[1]);
+    if (CITY_PAGE === ROUTES.HOME.NAME) {
+      sessionStorage.setItem('city', `${ROUTES.SPB.NAME}`);
     } else {
-      setCityName(listСities[0]);
-      sessionStorage.setItem('city', listСities[0]);
+      sessionStorage.setItem('city', `${ROUTES.HOME.NAME}`);
     }
   };
 
@@ -55,11 +50,8 @@ export default function HeaderPage() {
 
     if (!!localCity) {
       setIsOpen(true);
-      location.pathname === ROUTES.SPB && setCityName(listСities[1]);
-      // console.log(localCity);
     }
-
-  }, [localCity, location.pathname]);
+  }, [localCity]);
 
   // add/remove scroll event listener
   useEffect(() => {
@@ -86,16 +78,16 @@ export default function HeaderPage() {
       <nav className='container mx-auto w-full max-w-screen-xl'>
         <div className='flex flex-wrap justify-between w-full items-center mx-auto'>
           <SvgLogo width={160} height={27} className='w-28 sm:w-30' />
-          <CitysHeader />
+          <CitiesHeader />
           <div className='hidden sm:flex'>{TEXT}</div>
         </div>
       </nav>
       <div className={`${classMenu} ${isOpen ? 'hidden' : ''}`}>
-        <h3 className='col-span-2 text-center'>Ваш город {cityName}?</h3>
+        <h3 className='col-span-2 text-center'>Ваш город {CITY_PAGE}?</h3>
 
-        {cityName === listСities[0] ? (
+        {CITY_PAGE === ROUTES.HOME.NAME ? (
           <NavLink
-            to={ROUTES.HOME}
+            to={ROUTES.HOME.URL}
             className='col-span-1 inline-block p-4 mb-2 ml-auto text-center border-2 border-mako-800 rounded-lg bg-mako-800 hover:bg-white-50 text-white-50 hover:text-mako-800 w-24'
             onClick={onClickLink}
           >
@@ -103,7 +95,7 @@ export default function HeaderPage() {
           </NavLink>
         ) : (
           <NavLink
-            to={ROUTES.SPB}
+            to={ROUTES.SPB.URL}
             className='col-span-1 inline-block p-4 mb-2 ml-auto text-center border-2 border-mako-800 rounded-lg bg-mako-800 hover:bg-white-50 text-white-50 hover:text-mako-800 w-24'
             onClick={onClickLink}
           >
@@ -111,9 +103,9 @@ export default function HeaderPage() {
           </NavLink>
         )}
 
-        {cityName === listСities[0] ? (
+        {CITY_PAGE === ROUTES.HOME.NAME ? (
           <NavLink
-            to={ROUTES.SPB}
+            to={ROUTES.SPB.URL}
             className='col-span-1 inline-block p-4 mb-2 text-center border-2 border-mako-800 rounded-lg hover:bg-mako-800 hover:text-white-50 w-24'
             onClick={onChangeLocation}
           >
@@ -121,7 +113,7 @@ export default function HeaderPage() {
           </NavLink>
         ) : (
           <NavLink
-            to={ROUTES.HOME}
+            to={ROUTES.HOME.URL}
             className='col-span-1 inline-block p-4 mb-2 text-center border-2 border-mako-800 rounded-lg hover:bg-mako-800 hover:text-white-50 w-24'
             onClick={onChangeLocation}
           >

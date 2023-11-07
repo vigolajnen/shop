@@ -30,9 +30,9 @@ const AppRoutes = () => {
   return (
     <>
       <Routes location={background}>
-        <Route path={ROUTES.HOME} element={<LayoutPage />}>
+        <Route path={ROUTES.HOME.URL} element={<LayoutPage />}>
           <Route index element={<Home />} />
-          <Route path={ROUTES.SPB} element={<SpbHome />} />
+          <Route path={ROUTES.SPB.URL} element={<SpbHome />} />
           <Route path={ROUTES.URL_ANY} element={<NotFoundPage />} />
         </Route>
       </Routes>
@@ -40,7 +40,7 @@ const AppRoutes = () => {
       {location.state?.bgTariffSamara && (
         <Routes>
           <Route
-            path={`${ROUTES.HOME}/:id`}
+            path={`${ROUTES.HOME.URL}/:id`}
             element={
               <Modal onClose={onCloseModal} title=''>
                 <ModalContent>
@@ -55,7 +55,7 @@ const AppRoutes = () => {
       {location.state?.bgTariffSpb && (
         <Routes>
           <Route
-            path={`${ROUTES.SPB}/:id`}
+            path={`${ROUTES.SPB.URL}/:id`}
             element={
               <Modal onClose={onCloseModal} title=''>
                 <ModalContent>

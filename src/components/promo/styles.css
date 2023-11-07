@@ -9,6 +9,8 @@
     #ebf1f7
   ); */
   /* height: 60vh; */
+
+
 }
 
 @media (min-width: 567px) {
@@ -18,4 +20,8 @@
      /* height: 100vh; */
      max-height: 689px;
   }
+}
+
+.promo .swiper-wrapper {
+  height: 100%;
 }

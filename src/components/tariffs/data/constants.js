@@ -2,7 +2,7 @@ export const CONTRIBUTION = 500; // стоимость подписки
 export const OLD_CONTRIBUTION = 3900; // стоимость подписки
 
 export const subscriptionData = {
-  name: 'Членский взнос',
+  name: 'Первоначальный взнос',
   price: CONTRIBUTION,
 };
 
@@ -19,4 +19,27 @@ export const TEXT_3 = 'Тариф дает возможность посещат
 export const formatPrice = price => {
   let str = price.toString();
   return `${str.slice(0, 1)}.${str.slice(1)}`;
+};
+
+export const BREAKPOINTS = {
+  320: {
+    slidesPerView: 1.3,
+    freeMode: true,
+    spaceBetween: 10,
+  },
+  640: {
+    slidesPerView: 2,
+  },
+  768: {
+    slidesPerView: 2,
+    spaceBetween: 20,
+  },
+  960: {
+    slidesPerView: 2.7,
+    spaceBetween: 20,
+  },
+  1200: {
+    slidesPerView: 3,
+    spaceBetween: 20,
+  },
 };

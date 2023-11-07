@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 import { SwiperSlide } from 'swiper/react';
 
-import { IClubServicesProps } from '../../types';
 import Section from '../UI/section/Section';
 import SectionTitle from '../UI/section-title/SectionTitle';
 import CarouselBaseSwiper from '../carousel-base-swiper/CarouselBaseSwiper';
 
 import './styles.css';
 import { Scroll } from '../icons';
+import { CityContext } from '../../context/CityContext';
+import { LIST_SERVICES_CITY } from './data/data';
 
-export default function ClubServices({ title, data }: IClubServicesProps) {
+interface ClubServicesProps {
+  title: string;
+}
+
+export default function ClubServices({ title }: ClubServicesProps) {
+  const CITY_NAME = useContext(CityContext).city;
+  const data = LIST_SERVICES_CITY.filter((val) => val.city === CITY_NAME)[0]
+    .list;
+
   const matches = useMediaQuery('(min-width: 567px) and (max-width: 1200px)');
 
   const liClass = 'overflow-hidden shadow-sm';

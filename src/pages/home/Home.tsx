@@ -1,16 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
-import { listServices } from '../../components/club-services/data/dataSam';
-import { listAdvantages } from '../../components/advantages/data/dataSam';
-import { listFaqAccordion } from '../../components/faq-accordion/data';
-import { PROMO_CAROUSEL } from '../../components/promo/data/dataSam';
-
-import {
-  clubsAddress,
-  listTariffs,
-} from '../../components/tariffs/data/dataSam';
-import { ALL_GALLERY_DATA } from '../../components/clubs-gallery/data/dataSam';
+import { CityContext } from '../../context/CityContext';
+import { SAMARA_CITY_DATA } from '../../utils/constants';
+import MetaData from '../../components/meta-data/MetaData';
+import HeaderPage from '../../components/header-page/HeaderPage';
+import FooterPage from '../../components/footer-page/FooterPage';
 
 import Promo from '../../components/promo/Promo';
 import Timer from '../../components/timer/Timer';
@@ -19,58 +13,33 @@ import Advantages from '../../components/advantages/Advantages';
 import Tariffs from '../../components/tariffs/Tariffs';
 import ClubsGallery from '../../components/clubs-gallery/ClubsGallery';
 import Faq from '../../components/faq/Faq';
-import FooterPage from '../../components/footer-page/FooterPage';
-import { Helmet } from 'react-helmet';
 
 const Home = () => {
   return (
-    // arrayPromoPic
-    <main className=''>
-      <Helmet>
-        <meta charSet='utf-8' />
-        <title>
-          Fitness House в Самаре | Безлимитный абонемент за месяц 1900 руб.
-        </title>
-        <meta
-          name='description'
-          content='Фитнес-клуб с бассейном с оплатой за месяц 1900 руб. Бассейн, спа, групповые занятия, тренажерный зал.'
-        />
-      </Helmet>
+    <CityContext.Provider value={SAMARA_CITY_DATA}>
+      <MetaData
+        title='Fitness House в Самаре | Безлимитный абонемент за месяц 1900 руб.'
+        description='Фитнес-клуб с бассейном с оплатой за месяц 1900 руб. Бассейн, спа, групповые занятия, тренажерный зал.'
+      />
 
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <Promo data={PROMO_CAROUSEL} />
-      </motion.div>
+      <HeaderPage />
+      <main>
+        <Promo />
+        <Timer title='До конца акции осталось:' />
+        <ClubServices title='В абонемент включено' />
+        <Tariffs title='Тарифы' />
 
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <Timer title='До конца акции осталось:' endDate='December, 31, 2023' />
-      </motion.div>
-
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <ClubServices title='В абонемент включено' data={listServices} />
-      </motion.div>
-
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <Tariffs title='Тарифы' data={listTariffs} count={3} />
-      </motion.div>
+        <div className='overflow-hidden'>
+          <Advantages title='Ваша выгода' />
+          <ClubsGallery title='клубы fitness house' />
+        </div>
+      </main>
 
       <div className='overflow-hidden'>
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-          <Advantages title='Ваша выгода' data={listAdvantages} />
-        </motion.div>
-
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-          <ClubsGallery title='клубы fitness house' data={ALL_GALLERY_DATA} />
-        </motion.div>
+        <Faq title='отвечаем на Вопросы' />
+        <FooterPage />
       </div>
-      
-      <div className='overflow-hidden'>
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-          <Faq title='отвечаем на Вопросы' data={listFaqAccordion} />
-        </motion.div>
-
-        <FooterPage data={clubsAddress} />
-      </div>
-    </main>
+    </CityContext.Provider>
   );
 };
 

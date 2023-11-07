@@ -8,7 +8,7 @@
 
 .grid {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0 auto auto;
   padding-left: 16px;
   padding-right: 16px;
   width: 100%;
@@ -16,7 +16,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 88vh;
+  min-height: 50vh;
   flex-wrap: wrap;
   gap: 60px;
+  flex-grow: 1;
 }
