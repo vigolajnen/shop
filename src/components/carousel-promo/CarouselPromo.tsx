@@ -1,12 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { SwiperSlide } from 'swiper/react';
-
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
 
 import { ICarouselPromoProps } from '../../types';
 import { CityContext } from '../../context/CityContext';
-import { ROUTES } from '../../utils/routes';
 import { PROMO_CAROUSEL_SAMARA } from './data/dataSam';
 import { PROMO_CAROUSEL_SPB } from './data/dataSpb';
 import CarouselBaseSwiper from '../carousel-base-swiper/CarouselBaseSwiper';
@@ -17,19 +15,18 @@ import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './styles.css';
+import { getDataList } from '../../utils/constants';
 
 export default function CarouselPromo({ styles }: ICarouselPromoProps) {
   const CITY_NAME = useContext(CityContext).city;
-  const getDataList = () => {
-    if (CITY_NAME === ROUTES.HOME.NAME) {
-      return [PROMO_CAROUSEL_SAMARA].filter((val) => val.city === CITY_NAME)[0]
-        .list;
-    } else if (CITY_NAME === ROUTES.SPB.NAME) {
-      return [PROMO_CAROUSEL_SPB].filter((val) => val.city === CITY_NAME)[0]
-        .list;
-    }
-  };
-  const data = getDataList();
+
+  const dataCity = getDataList(
+    CITY_NAME,
+    PROMO_CAROUSEL_SAMARA,
+    PROMO_CAROUSEL_SPB,
+  );
+
+  const data = [dataCity].filter((val: any) => val.city === CITY_NAME)[0].list;
 
   const breakpoints = {
     320: {
@@ -44,9 +41,6 @@ export default function CarouselPromo({ styles }: ICarouselPromoProps) {
     slidesPerView: 1,
     effect: 'fade',
     autoHeight: true,
-    // autoplay: {
-    //   delay: 5000,
-    // },
     loop: true,
     modules: [Navigation, Pagination, EffectFade, Autoplay],
   };

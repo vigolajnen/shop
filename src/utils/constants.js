@@ -1,3 +1,5 @@
+import { ROUTES } from "./routes";
+
 export const SAMARA_CITY_DATA = {
   city: 'Самара',
   clubs: [
@@ -36,4 +38,12 @@ export const SPB_CITY_DATA = {
     endDate: 'December, 15, 2023',
     startDate: '',
   },
+};
+
+export const getDataList = (city, sam, spb) => {
+  if (city === ROUTES.HOME.NAME) {
+    return sam;
+  } else if (city === ROUTES.SPB.NAME) {
+    return spb;
+  }
 };

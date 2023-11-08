@@ -5,7 +5,6 @@ import { Navigation, Scrollbar } from 'swiper/modules';
 
 import { CityContext } from '../../context/CityContext';
 import { ALL_GALLERY_DATA_SPB } from './data/dataSpb';
-import { ROUTES } from '../../utils/routes';
 import { ALL_GALLERY_DATA_SAMARA } from './data/dataSam';
 import Section from '../UI/section/Section';
 import SectionTitle from '../UI/section-title/SectionTitle';
@@ -15,6 +14,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import './styles.css';
 import { Scroll } from '../icons';
+import { getDataList } from '../../utils/constants';
 
 interface ClubsGalleryProps {
   title: string;
@@ -22,17 +22,12 @@ interface ClubsGalleryProps {
 
 export default function ClubsGallery({ title }: ClubsGalleryProps) {
   const CITY_NAME = useContext(CityContext).city;
-  const getDataList = () => {
-    if (CITY_NAME === ROUTES.HOME.NAME) {
-      return [ALL_GALLERY_DATA_SAMARA].filter(
-        (val) => val.city === CITY_NAME,
-      )[0].list;
-    } else if (CITY_NAME === ROUTES.SPB.NAME) {
-      return [ALL_GALLERY_DATA_SPB].filter((val) => val.city === CITY_NAME)[0]
-        .list;
-    }
-  };
-  const data = getDataList();
+  const dataCity = getDataList(
+    CITY_NAME,
+    ALL_GALLERY_DATA_SAMARA,
+    ALL_GALLERY_DATA_SPB,
+  );
+  const data = [dataCity].filter((val: any) => val.city === CITY_NAME)[0].list;
 
   const matches = useMediaQuery('(min-width: 567px)');
 

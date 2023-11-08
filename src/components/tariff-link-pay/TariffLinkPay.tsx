@@ -3,8 +3,10 @@ import { ROUTES } from '../../utils/routes';
 import { Link, useLocation } from 'react-router-dom';
 
 import styles from './styles.module.css';
+import { useModal } from '../../hooks/useModal';
 
-export default function TariffLinkPay({ data, onClick }: any) {
+export default function TariffLinkPay({ data }: any) {
+  const { openModal } = useModal();
   const location = useLocation();
   const CITY_PAGE_URL = location.pathname;
 
@@ -15,7 +17,7 @@ export default function TariffLinkPay({ data, onClick }: any) {
     <>
       {CITY_PAGE_URL === ROUTES.SPB.URL ? (
         <Link
-          onClick={onClick}
+          onClick={openModal}
           to={`${ROUTES.SPB.URL}/${data.id}`}
           state={{ tariff: data, bgTariffSpb: location }}
           className={`${data.id === 2 ? btnClassListActive : btnClassList} `}
@@ -24,7 +26,7 @@ export default function TariffLinkPay({ data, onClick }: any) {
         </Link>
       ) : (
         <Link
-          onClick={onClick}
+          onClick={openModal}
           to={`/${data.id}`}
           state={{ tariff: data, bgTariffSamara: location }}
           className={`${data.id === 2 ? btnClassListActive : btnClassList} `}

@@ -28,7 +28,7 @@ const SpbHome = () => {
         <Promo />
         <Timer title='До конца акции осталось:' />
         <ClubServices title='В абонемент включено' />
-        <Tariffs title='Тарифы' />
+        <Tariffs title='Тарифы' count={2} />
         <div className='overflow-hidden'>
           <Advantages title='Ваша выгода' />
         </div>

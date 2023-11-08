@@ -22,11 +22,12 @@ export interface IAdvantagesProps {
 
 export interface ITariffsProps {
   title?: string;
+  count?: number;
 }
 
 export interface ITariffItemProps {
   data: any;
-  onClick: () => void;
+  // onClick: () => void;
 }
 
 export interface ITariffItemHeaderProps {
