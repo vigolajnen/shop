@@ -7,7 +7,7 @@
           "id": 1,
           "name": "Васильевский",
           "address": "пр. Большой В.О., д. 68А",
-          "pool": false,
+          "isPool": false,
           "products": [
             {
               "product_id": "414890",
@@ -38,7 +38,7 @@
           "id": 1,
           "name": "Монте Роза",
           "address": "Московское ш., 4, корп. 4",
-          "pool": true,
+          "isPool": true,
           "products": [
             {
               "product_id": "404241",
@@ -70,7 +70,7 @@
           "id": 2,
           "name": "Гудок",
           "address": "Красноармейская ул., 131",
-          "pool": true,
+          "isPool": true,
           "products": [
             {
               "product_id": "404242",
@@ -102,7 +102,7 @@
           "id": 3,
           "name": "Амбар",
           "address": "Южное ш., 5",
-          "pool": true,
+          "isPool": true,
           "products": [
             {
               "product_id": "404244",
@@ -134,7 +134,7 @@
           "id": 4,
           "name": "Шипка",
           "address": "Ул. Стара Загора, 58",
-          "pool": "ул. Стара Загора д. 58 (Шипка)",
+          "isPool": true,
           "products": [
             {
               "product_id": "409888",
