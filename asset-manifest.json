@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "https://vigolajnen.github.io/shop/static/css/main.b0c32a85.css",
+    "main.css": "https://vigolajnen.github.io/shop/static/css/main.8a6a205f.css",
     "main.js": "https://vigolajnen.github.io/shop/static/js/main.f79eb62b.js",
     "static/media/1.svg": "https://vigolajnen.github.io/shop/static/media/1.9e7af82b7044c63bbfd8.svg",
     "static/media/2.webp": "https://vigolajnen.github.io/shop/static/media/2.cd70f042285a02fad48c.webp",
@@ -21,11 +21,11 @@
     "static/media/4.svg": "https://vigolajnen.github.io/shop/static/media/4.f0eec470894e56c555c9.svg",
     "static/media/3.svg": "https://vigolajnen.github.io/shop/static/media/3.b1c822c4218a0efe9c43.svg",
     "index.html": "https://vigolajnen.github.io/shop/index.html",
-    "main.b0c32a85.css.map": "https://vigolajnen.github.io/shop/static/css/main.b0c32a85.css.map",
+    "main.8a6a205f.css.map": "https://vigolajnen.github.io/shop/static/css/main.8a6a205f.css.map",
     "main.f79eb62b.js.map": "https://vigolajnen.github.io/shop/static/js/main.f79eb62b.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0c32a85.css",
+    "static/css/main.8a6a205f.css",
     "static/js/main.f79eb62b.js"
   ]
 }
