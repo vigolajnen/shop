@@ -1,0 +1,24 @@
+.formStepper [class^='StepperContainer'] {
+  padding: 0;
+  width: 100%;
+}
+.formStepper [class^='StepContainer'] {
+  padding: 0;
+}
+
+.formStepper [class^='StepButton-'].active,
+.formStepper [class^='StepButton-'].completed {
+  @apply bg-primary !important;
+}
+
+.formStepper .stepper-form-wrapper label::after {
+  content: '';
+}
+
+input[type='date'],
+select {
+  width: 100%;
+  display: block;
+  background: transparent;
+  background-color: transparent;
+}

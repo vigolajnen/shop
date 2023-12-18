@@ -1,32 +1,48 @@
-import React from 'react';
-import { useLocation, useParams } from 'react-router';
-import { LIST_TARIFFS_SAMARA } from '../tariffs/data/dataSam';
-import { LIST_TARIFFS_SPB } from '../tariffs/data/dataSpb';
-import { ROUTES } from '../../utils/routes';
-import Forms from '../forms/Forms';
-import FormProvider from '../forms/context';
+import { useContext } from 'react';
+import { useParams } from 'react-router';
+
+import FormProvider from '../../context/FormContext';
+import { CityContext } from '../../context/CityContext';
+import { useGetPriceCitiesQuery } from '../../store/reducers/pro.api';
+import { getDataCity, getDataCityClubsTariff } from '../../utils/form';
+import FormOrder from '../form-order/FormOrder';
 
 export default function FormOrderTariff() {
   const { id } = useParams();
-  const location = useLocation();
-  const PAGE_URL = location.pathname.slice(0, -1);
+  const pageCity = useContext(CityContext);
+  const { data } = useGetPriceCitiesQuery(pageCity);
+  const dataCityActive = getDataCity(data, pageCity);
+  const clubs = dataCityActive && dataCityActive.clubs;
+  const dataClubsProducts =
+    clubs &&
+    clubs.map((club: any) => {
+      return club.products.filter(
+        (el: any) => el.product_type !== 'subscription_recurrent',
+      );
+    })[0];
+  const tariffData: any = [];
+  dataClubsProducts &&
+    dataClubsProducts?.map((el: any, i: number) =>
+      tariffData.push({
+        id: i + 1,
+        type: el.product_type,
+        period: el.product_type,
+        title: el.product_name,
+        price: el.product_price,
+        clubs: [...getDataCityClubsTariff(clubs, el.product_type)],
+      }),
+    );
 
-  const getDataList = () => {
-    if (PAGE_URL === ROUTES.HOME.URL) {
-      return LIST_TARIFFS_SAMARA;
-    } else if (PAGE_URL === `${ROUTES.SPB.URL}/`) {
-      return LIST_TARIFFS_SPB;
-    }
-  };
-  const data = getDataList();
-  const item = () => data?.find((item) => item.id === Number(id));
+  const item = () => tariffData?.find((item: any) => item.id === Number(id));
 
   const dataItem = item();
+
+  console.log('dataItem', dataItem);
 
   return (
     <div>
       <FormProvider>
-        <Forms item={dataItem} />
+        <FormOrder item={dataItem} />
       </FormProvider>
     </div>
   );

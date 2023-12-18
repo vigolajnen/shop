@@ -1,0 +1,19 @@
+.modalContent {
+  padding: 0 10px;
+}
+
+@media (min-width: 640px) {
+  .modalContent {
+    padding: 5vw 7vw;
+  }
+}
+
+@media (min-width: 1150px) {
+  .modalContent {
+    padding: 60px 80px;
+  }
+}
+
+.modalOpen {
+  overflow: hidden;
+}

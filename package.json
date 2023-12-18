@@ -1,75 +1,59 @@
 {
-  "name": "shop",
-  "version": "0.1.0",
+  "name": "pro",
   "private": true,
-  "homepage": "../",
-  "dependencies": {
-    "@hookform/resolvers": "^3.3.2",
-    "@svgr/cli": "^8.1.0",
-    "@svgr/core": "^8.1.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.57",
-    "@types/react": "^18.2.25",
-    "@types/react-dom": "^18.2.10",
-    "@types/react-helmet": "^6.1.7",
-    "@types/react-helmet-async": "^1.0.3",
-    "axios": "^1.5.1",
-    "framer-motion": "^10.16.4",
-    "react": "^18.2.0",
-    "react-bootstrap": "^2.9.0",
-    "react-dom": "^18.2.0",
-    "react-form-stepper": "^2.0.3",
-    "react-helmet-async": "^1.3.0",
-    "react-hook-form": "^7.47.0",
-    "react-imask": "^7.1.3",
-    "react-input-mask": "^2.0.4",
-    "react-router": "^6.16.0",
-    "react-router-dom": "^6.16.0",
-    "react-scripts": "^5.0.1",
-    "swiper": "^10.3.1",
-    "tw-elements-react": "^1.0.0-alpha1",
-    "typescript": "^4.9.5",
-    "usehooks-ts": "^2.9.1",
-    "web-vitals": "^2.1.4"
-  },
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "icon:create": "svgr -- src/images/icons",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "vite",
+    "build": "tsc && vite build",
+    "dev": "cross-env REACT_APP_VERSION=dev vite",
+    "dev:build": "tsc && vite build --mode development",
+    "prod": "cross-env REACT_APP_VERSION=prod vite --mode production",
+    "prod:build": "cross-env REACT_APP_VERSION=prod tsc && vite build --mode production",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.0.1",
+    "@types/react-helmet-async": "^1.0.3",
+    "@types/react-redux": "^7.1.32",
+    "framer-motion": "^10.16.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-error-boundary": "^4.0.11",
+    "react-form-stepper": "^2.0.3",
+    "react-helmet-async": "^2.0.3",
+    "react-hook-form": "^7.49.0",
+    "react-input-mask": "^2.0.4",
+    "react-redux": "^9.0.3",
+    "react-router": "^6.20.1",
+    "react-router-dom": "^6.20.1",
+    "react-tooltip": "^5.25.0",
+    "swiper": "^11.0.5",
+    "usehooks-ts": "^2.9.1",
+    "vite-plugin-env-compatible": "^2.0.1"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@types/react-input-mask": "^3.0.3",
-    "gh-pages": "^6.0.0",
-    "tailwindcss": "^3.3.3"
-  },
-  "overrides": {
-    "nth-check": "2.1.1",
-    "postcss": "8.4.31"
+    "@svgr/plugin-svgo": "^8.1.0",
+    "@types/node": "^20.10.4",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.15",
+    "@types/react-input-mask": "^3.0.5",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "autoprefixer": "^10.4.16",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
+    "tailwindcss-themer": "^4.0.0",
+    "typescript": "^5.2.2",
+    "typescript-plugin-css-modules": "^5.0.2",
+    "vite": "^5.0.0",
+    "vite-imagetools": "^6.2.7",
+    "vite-plugin-svgr": "^4.2.0"
   }
 }
